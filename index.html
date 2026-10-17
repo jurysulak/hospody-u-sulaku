@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="cs" class="scroll-smooth">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hospoda U Šuláků | Opava-Kateřinky</title>
-  <meta name="description" content="Tradiční poctivá česká hospoda U Šuláků v Opavě-Kateřinkách. Tanková Plzeň, Radegast, bramborákové speciality, salonek na oslavy a letní zahrádka.">
-  
+  <meta name="description"
+    content="Tradiční poctivá česká hospoda U Šuláků v Opavě-Kateřinkách. Tanková Plzeň, Radegast, bramborákové speciality, salonek na oslavy a letní zahrádka.">
+
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome Icons -->
@@ -15,7 +17,8 @@
   <!-- Google Fonts: Inter s plnou českou diakritikou -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
 
   <script>
     tailwind.config = {
@@ -46,6 +49,8 @@
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
   </style>
+
+  <link rel="icon" type="image/png" href="img/logo.png">
 </head>
 
 <body class="bg-stone-950 text-stone-200 antialiased selection:bg-amber-500 selection:text-black">
@@ -53,17 +58,15 @@
   <!-- ==================== HORNÍ NAVIGACE ==================== -->
   <header class="sticky top-0 z-50 bg-stone-950/95 backdrop-blur-md border-b border-stone-800/80 shadow-2xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-      
+
       <!-- Logo a název -->
       <a href="#" class="flex items-center gap-3 group">
-        <img 
-          src="img/logo.png" 
-          alt="Hospoda U Šuláků Logo" 
+        <img src="img/logo.png" alt="Hospoda U Šuláků Logo"
           class="w-12 h-12 rounded-full border-2 border-amber-500/70 p-0.5 bg-stone-900 object-cover shadow-md group-hover:scale-105 transition-transform"
-          onerror="this.onerror=null; this.src='https://placehold.co/100x100/1c1713/f3a738?text=U+Šuláků'"
-        >
+          onerror="this.onerror=null; this.src='https://placehold.co/100x100/1c1713/f3a738?text=U+Šuláků'">
         <div>
-          <span class="block text-lg sm:text-xl font-bold tracking-wide text-amber-400 group-hover:text-amber-300 transition-colors">
+          <span
+            class="block text-lg sm:text-xl font-bold tracking-wide text-amber-400 group-hover:text-amber-300 transition-colors">
             HOSPODA U ŠULÁKŮ
           </span>
           <span class="block text-[10px] tracking-widest uppercase text-stone-400">
@@ -82,28 +85,18 @@
 
       <!-- Rychlá tlačítka -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <a 
-          href="https://www.facebook.com/hospoda.u.sulaku.2025?locale=cs_CZ" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a href="https://www.facebook.com/hospoda.u.sulaku.2025?locale=cs_CZ" target="_blank" rel="noopener noreferrer"
           title="Facebook Hospody U Šuláků"
-          class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 hover:border-blue-500 hover:text-blue-400 text-stone-300 flex items-center justify-center transition-colors text-sm"
-        >
+          class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 hover:border-blue-500 hover:text-blue-400 text-stone-300 flex items-center justify-center transition-colors text-sm">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
-        <a 
-          href="https://www.instagram.com/tenisovyklubopava/" 
-          target="_blank" 
-          rel="noopener noreferrer" 
+        <a href="https://www.instagram.com/tenisovyklubopava/" target="_blank" rel="noopener noreferrer"
           title="Instagram Hospody U Šuláků"
-          class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 hover:border-pink-500 hover:text-pink-400 text-stone-300 flex items-center justify-center transition-colors text-sm"
-        >
+          class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 hover:border-pink-500 hover:text-pink-400 text-stone-300 flex items-center justify-center transition-colors text-sm">
           <i class="fa-brands fa-instagram"></i>
         </a>
-        <a 
-          href="#rezervace" 
-          class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 active:scale-95 transition-all flex items-center gap-1.5"
-        >
+        <a href="#rezervace"
+          class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 active:scale-95 transition-all flex items-center gap-1.5">
           <i class="fa-solid fa-calendar-check text-xs"></i>
           <span>Rezervovat</span>
         </a>
@@ -113,58 +106,55 @@
   </header>
 
   <!-- ==================== HERO SEKCIE ==================== -->
-  <section class="relative py-16 sm:py-24 bg-gradient-to-b from-stone-950 via-stone-900 to-stone-950 border-b border-stone-800/60 overflow-hidden">
+  <section
+    class="relative py-16 sm:py-24 bg-gradient-to-b from-stone-950 via-stone-900 to-stone-950 border-b border-stone-800/60 overflow-hidden">
     <!-- Světelný podkres -->
-    <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div
+      class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none">
+    </div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center relative z-10">
-      
+
       <!-- Kulaté logo hospody -->
       <div class="inline-block mb-6 relative">
-        <div class="absolute -inset-2 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-full blur-md opacity-40"></div>
-        <img 
-          src="img/logo.png" 
-          alt="Hospoda U Šuláků pečeť" 
+        <div class="absolute -inset-2 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-full blur-md opacity-40">
+        </div>
+        <img src="img/logo.png" alt="Hospoda U Šuláků pečeť"
           class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full border-4 border-amber-500/80 p-1 bg-stone-900 object-cover shadow-2xl mx-auto hover:scale-105 transition-transform duration-300"
-          onerror="this.onerror=null; this.src='https://placehold.co/200x200/1c1713/f3a738?text=U+Šuláků+Opava'"
-        >
+          onerror="this.onerror=null; this.src='https://placehold.co/200x200/1c1713/f3a738?text=U+Šuláků+Opava'">
       </div>
 
       <!-- Titulek -->
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
+      <div
+        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
         <i class="fa-solid fa-beer-mug-empty"></i> Poctivé pivo &bull; Cihlový interiér &bull; Salonek na oslavy
       </div>
 
       <h1 class="text-4xl sm:text-6xl font-extrabold text-stone-100 tracking-tight leading-tight mb-4">
-        Vítejte v <span class="text-amber-400 underline decoration-amber-500/40 underline-offset-8">Hospodě U Šuláků</span>
+        Vítejte v <span class="text-amber-400 underline decoration-amber-500/40 underline-offset-8">Hospodě U
+          Šuláků</span>
       </h1>
-      
+
       <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto font-normal leading-relaxed mb-8">
-        Hospoda s pravou atmosférou v Opavě-Kateřinkách. Dokonalá hladinka Pilsner Urquell, hořký Radegast, vyhlášené bramboráky, domácí limonády a útulný podkrovní salonek pro vaše rodinné i firemní oslavy.
+        Hospoda s pravou atmosférou v Opavě-Kateřinkách. Dokonalá hladinka Pilsner Urquell, hořký Radegast, vyhlášené
+        bramboráky, domácí limonády a útulný podkrovní salonek pro vaše rodinné i firemní oslavy.
       </p>
 
       <!-- Tlačítka Hero -->
       <div class="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4 mb-8">
-        <a 
-          href="#rezervace" 
-          class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-base uppercase tracking-wider shadow-lg shadow-amber-500/30 active:scale-95 transition-all flex items-center gap-2"
-        >
-          <i class="fa-brands fa-whatsapp text-xl text-stone-950"></i>
-          <span>Rychlá rezervace na WhatsApp</span>
+        <a href="#rezervace"
+          class="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-base uppercase tracking-wider shadow-lg shadow-amber-500/30 active:scale-95 transition-all flex items-center gap-2">
+          <i class="fa-solid fa-envelope text-xl text-stone-950"></i>
+          <span>Rezervace</span>
         </a>
-        <a 
-          href="#nabidka" 
-          class="px-6 py-3.5 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-stone-200 font-bold text-base uppercase tracking-wider transition-all flex items-center gap-2"
-        >
+        <a href="#nabidka"
+          class="px-6 py-3.5 rounded-xl bg-stone-900 hover:bg-stone-800 border border-stone-700 text-stone-200 font-bold text-base uppercase tracking-wider transition-all flex items-center gap-2">
           <i class="fa-solid fa-utensils text-amber-400"></i>
           <span>Zobrazit lístek</span>
         </a>
-        <a 
-          href="https://maps.google.com/?q=Hospoda+U+Šuláků+Pekařská+349/99+Opava" 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          class="px-5 py-3.5 rounded-xl bg-stone-900/80 hover:bg-stone-800 border border-stone-700 text-stone-300 text-sm font-semibold transition-all flex items-center gap-2"
-        >
+        <a href="https://maps.google.com/?q=Hospoda+U+Šuláků+Pekařská+349/99+Opava" target="_blank"
+          rel="noopener noreferrer"
+          class="px-5 py-3.5 rounded-xl bg-stone-900/80 hover:bg-stone-800 border border-stone-700 text-stone-300 text-sm font-semibold transition-all flex items-center gap-2">
           <i class="fa-solid fa-star text-amber-400"></i>
           <span>Hodnocení Google (4.6★)</span>
         </a>
@@ -200,7 +190,7 @@
   <!-- ==================== JÍDELNÍ & NÁPOJOVÝ LÍSTEK ==================== -->
   <section id="nabidka" class="py-16 sm:py-24 bg-stone-900/50 border-b border-stone-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-amber-400 text-xs font-bold tracking-widest uppercase block mb-1">
           S láskou U Šuláků
@@ -214,28 +204,46 @@
 
         <!-- Filtry kategorií menu -->
         <div class="flex flex-wrap items-center justify-center gap-2 mt-6" id="menuTabs">
-          <button onclick="filterMenu('vse')" class="menu-tab-btn active px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-amber-500 text-stone-950">Vše</button>
-          <button onclick="filterMenu('pivo')" class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Pivo & Čep</button>
-          <button onclick="filterMenu('bramboraky')" class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Bramboráky</button>
-          <button onclick="filterMenu('kuchyne')" class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Jídla & Gril</button>
-          <button onclick="filterMenu('chutovky')" class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Chuťovky k pivu</button>
-          <button onclick="filterMenu('limonady')" class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Limonády & Čaje</button>
-          <button onclick="filterMenu('drinky')" class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Míchané drinky</button>
-          <button onclick="filterMenu('nealko-kava')" class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Káva & Nealko</button>
-          <button onclick="filterMenu('alko-vino')" class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Alko & Víno</button>
+          <button onclick="filterMenu('vse')"
+            class="menu-tab-btn active px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-amber-500 text-stone-950">Vše</button>
+          <button onclick="filterMenu('pivo')"
+            class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Pivo
+            & Čep</button>
+          <button onclick="filterMenu('bramboraky')"
+            class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Bramboráky</button>
+          <button onclick="filterMenu('kuchyne')"
+            class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Jídla
+            & Gril</button>
+          <button onclick="filterMenu('chutovky')"
+            class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Chuťovky
+            k pivu</button>
+          <button onclick="filterMenu('limonady')"
+            class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Limonády
+            & Čaje</button>
+          <button onclick="filterMenu('drinky')"
+            class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Míchané
+            drinky</button>
+          <button onclick="filterMenu('nealko-kava')"
+            class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Káva
+            & Nealko</button>
+          <button onclick="filterMenu('alko-vino')"
+            class="menu-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Alko
+            & Víno</button>
         </div>
       </div>
 
       <!-- Mřížka menu -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
+<!-- Mřížka menu -->
+<div class="flex flex-wrap justify-center gap-6">
         <!-- 1. PIVNÍ SPECIALITKY -->
-        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-amber-500/30 shadow-xl" data-category="pivo">
+        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-amber-500/30 shadow-xl"
+          data-category="pivo">
           <div class="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
             <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
               <i class="fa-solid fa-beer-mug-empty"></i> Pivní speciality
             </h3>
-            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Na čepu</span>
+            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-300">Na
+              čepu</span>
           </div>
           <div class="space-y-3 text-sm">
             <div class="flex justify-between items-baseline border-b border-stone-800/40 pb-1.5">
@@ -296,12 +304,14 @@
         </div>
 
         <!-- 2. BRAMBORÁKOVÉ DOBROTY -->
-        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl" data-category="bramboraky">
+        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl"
+          data-category="bramboraky">
           <div class="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
             <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
               <i class="fa-solid fa-plate-wheat"></i> Bramborákové dobroty
             </h3>
-            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">Specialita</span>
+            <span
+              class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">Specialita</span>
           </div>
           <div class="space-y-3 text-sm">
             <div class="flex justify-between items-baseline border-b border-stone-800/40 pb-1.5">
@@ -350,12 +360,14 @@
         </div>
 
         <!-- 3. JÍDLA, MASO & GRIL -->
-        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl" data-category="kuchyne">
+        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl"
+          data-category="kuchyne">
           <div class="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
             <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
               <i class="fa-solid fa-fire-burner"></i> Jídla z kuchyně & Gril
             </h3>
-            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">Teplá kuchyně</span>
+            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">Teplá
+              kuchyně</span>
           </div>
           <div class="space-y-3 text-sm">
             <div class="flex justify-between items-baseline border-b border-stone-800/40 pb-1.5">
@@ -410,12 +422,14 @@
         </div>
 
         <!-- 4. CHUŤOVKY K PIVKU -->
-        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl" data-category="chutovky">
+        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl"
+          data-category="chutovky">
           <div class="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
             <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
               <i class="fa-solid fa-drumstick-bite"></i> Chuťovky k pivu
             </h3>
-            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">K výčepu</span>
+            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">K
+              výčepu</span>
           </div>
           <div class="space-y-3 text-sm">
             <div class="flex justify-between items-baseline border-b border-stone-800/40 pb-1.5">
@@ -457,12 +471,14 @@
         </div>
 
         <!-- 5. DOMÁCÍ LIMONÁDY & LEDOVÉ ČAJE (0,5 l) -->
-        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl" data-category="limonady">
+        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl"
+          data-category="limonady">
           <div class="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
             <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
               <i class="fa-solid fa-lemon"></i> Limonády & Ledové čaje
             </h3>
-            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">0,5 litru</span>
+            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">0,5
+              litru</span>
           </div>
           <div class="space-y-3 text-sm">
             <div class="p-3 rounded-xl bg-stone-950/70 border border-stone-800">
@@ -551,12 +567,14 @@
         </div>
 
         <!-- 7. NEALKO PIVO, KÁVA & TEPLÉ NÁPOJE -->
-        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl" data-category="nealko-kava">
+        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl"
+          data-category="nealko-kava">
           <div class="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
             <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
               <i class="fa-solid fa-mug-saucer"></i> Káva & Nealko
             </h3>
-            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">Piazza D'oro</span>
+            <span class="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-stone-800 text-stone-300">Piazza
+              D'oro</span>
           </div>
           <div class="space-y-2.5 text-sm">
             <div class="flex justify-between items-baseline border-b border-stone-800/40 pb-1">
@@ -591,7 +609,8 @@
         </div>
 
         <!-- 8. ALKOHOL, VÍNA & DEZERTY -->
-        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl" data-category="alko-vino">
+        <div class="menu-card p-6 rounded-2xl bg-stone-900/90 border border-stone-800 shadow-xl"
+          data-category="alko-vino">
           <div class="flex items-center justify-between border-b border-stone-800 pb-3 mb-4">
             <h3 class="text-lg font-bold text-amber-400 flex items-center gap-2">
               <i class="fa-solid fa-wine-bottle"></i> Víno, Rumy & Sladké
@@ -636,7 +655,7 @@
   <!-- ==================== FOTOGALERIE (VŠECH 11 FOTEK) ==================== -->
   <section id="galerie" class="py-16 sm:py-24 bg-stone-950 border-b border-stone-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="text-center max-w-3xl mx-auto mb-10">
         <span class="text-amber-400 text-xs font-bold tracking-widest uppercase block mb-1">
           Nahlédněte k nám
@@ -645,16 +664,27 @@
           Fotogalerie Hospody U Šuláků
         </h2>
         <p class="text-sm text-stone-400">
-          Cihlové klenby hlavního sálu, letní zahrádka se světýlky, slavnostní podkrovní salonek a poctivé čepované pivo.
+          Cihlové klenby hlavního sálu, letní zahrádka se světýlky, slavnostní podkrovní salonek a poctivé čepované
+          pivo.
         </p>
 
         <!-- Filtry fotogalerie -->
         <div class="flex flex-wrap items-center justify-center gap-2 mt-6">
-          <button onclick="filterGallery('vse')" class="gallery-tab-btn active px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-amber-500 text-stone-950">Všechny fotky</button>
-          <button onclick="filterGallery('interier')" class="gallery-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Interiér & Sál</button>
-          <button onclick="filterGallery('zahradka')" class="gallery-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Letní zahrádka</button>
-          <button onclick="filterGallery('salonek')" class="gallery-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Salonek & Oslavy</button>
-          <button onclick="filterGallery('pivo')" class="gallery-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Pivo & Detaily</button>
+          <button onclick="filterGallery('vse')"
+            class="gallery-tab-btn active px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-amber-500 text-stone-950">Všechny
+            fotky</button>
+          <button onclick="filterGallery('interier')"
+            class="gallery-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Interiér
+            & Sál</button>
+          <button onclick="filterGallery('zahradka')"
+            class="gallery-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Letní
+            zahrádka</button>
+          <button onclick="filterGallery('salonek')"
+            class="gallery-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Salonek
+            & Oslavy</button>
+          <button onclick="filterGallery('pivo')"
+            class="gallery-tab-btn px-3.5 py-1.5 rounded-full text-xs font-bold uppercase transition-all bg-stone-800 text-stone-300 hover:bg-stone-700">Pivo
+            & Detaily</button>
         </div>
       </div>
 
@@ -662,117 +692,179 @@
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 
         <!-- 1. Interiér s klenbou -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="interier" onclick="openLightbox('img/interier-klenba.jpg', 'Hlavní sál s cihlovými klenbami a posezením')">
-          <img src="img/interier-klenba.jpg" alt="Hlavní sál U Šuláků" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="interier"
+          onclick="openLightbox('img/interier-klenba.jpg', 'Hlavní sál s cihlovými klenbami a posezením')">
+          <img src="img/interier-klenba.jpg" alt="Hlavní sál U Šuláků"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Interiér & Sál</span>
             <span class="text-sm text-stone-100">Hlavní sál s cihlovými klenbami</span>
           </div>
         </div>
 
         <!-- 2. Interiér - klenba s průhledem k baru -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="interier" onclick="openLightbox('img/interier-bar.jpg', 'Cihlové klenby a průhled k baru')">
-          <img src="img/interier-bar.jpg" alt="Cihlové klenby" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="interier" onclick="openLightbox('img/interier-bar.jpg', 'Cihlové klenby a průhled k baru')">
+          <img src="img/interier-bar.jpg" alt="Cihlové klenby"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Interiér</span>
             <span class="text-sm text-stone-100">Průhled sálem k výčepu</span>
           </div>
         </div>
 
         <!-- 3. Interiér - sál s televizí pro sport -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="interier" onclick="openLightbox('img/interier-tv.jpg', 'Posezení u velké TV pro sportovní přenosy')">
-          <img src="img/interier-tv.jpg" alt="Sál s televizí" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="interier"
+          onclick="openLightbox('img/interier-tv.jpg', 'Posezení u velké TV pro sportovní přenosy')">
+          <img src="img/interier-tv.jpg" alt="Sál s televizí"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Sportovní přenosy</span>
             <span class="text-sm text-stone-100">Sál se sledováním hokeje a fotbalu</span>
           </div>
         </div>
 
         <!-- 4. Vstupní schodiště s chmelovou malbou -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="interier" onclick="openLightbox('img/vstup-schodiste.jpg', 'Vstupní hala se schodištěm do salonku')">
-          <img src="img/vstup-schodiste.jpg" alt="Vstupní schodiště" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="interier"
+          onclick="openLightbox('img/vstup-schodiste.jpg', 'Vstupní hala se schodištěm do salonku')">
+          <img src="img/vstup-schodiste.jpg" alt="Vstupní schodiště"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Vstupní hala</span>
             <span class="text-sm text-stone-100">Schodiště do podkrovního salonku</span>
           </div>
         </div>
 
         <!-- 5. Denní zahrádka pod slunečníky Pilsner -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="zahradka" onclick="openLightbox('img/zahradka-slunecniky.jpg', 'Slunečná letní zahrádka pod slunečníky Pilsner Urquell')">
-          <img src="img/zahradka-slunecniky.jpg" alt="Denní zahrádka" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="zahradka"
+          onclick="openLightbox('img/zahradka-slunecniky.jpg', 'Slunečná letní zahrádka pod slunečníky Pilsner Urquell')">
+          <img src="img/zahradka-slunecniky.jpg" alt="Denní zahrádka"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Letní zahrádka</span>
             <span class="text-sm text-stone-100">Denní posezení na dvoře</span>
           </div>
         </div>
 
         <!-- 6. Zahrádka večer se světelným řetězem -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="zahradka" onclick="openLightbox('img/zahradka-vecer.jpg', 'Kouzelná večerní atmosféra na zahrádce se světýlky')">
-          <img src="img/zahradka-vecer.jpg" alt="Večerní zahrádka" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="zahradka"
+          onclick="openLightbox('img/zahradka-vecer.jpg', 'Kouzelná večerní atmosféra na zahrádce se světýlky')">
+          <img src="img/zahradka-vecer.jpg" alt="Večerní zahrádka"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Večerní posezení</span>
             <span class="text-sm text-stone-100">Zahrádka pod lampami a světýlky</span>
           </div>
         </div>
 
         <!-- 7. Zahrádka noční pohled -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="zahradka" onclick="openLightbox('img/zahradka-noc.jpg', 'Noční atmosféra na dvoře U Šuláků')">
-          <img src="img/zahradka-noc.jpg" alt="Noční zahrádka" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="zahradka" onclick="openLightbox('img/zahradka-noc.jpg', 'Noční atmosféra na dvoře U Šuláků')">
+          <img src="img/zahradka-noc.jpg" alt="Noční zahrádka"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Zahrádka v noci</span>
             <span class="text-sm text-stone-100">Útulný večer s oroseným pivem</span>
           </div>
         </div>
 
         <!-- 8. Zahrádka slunečné odpoledne -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="zahradka" onclick="openLightbox('img/zahradka-slunce.jpg', 'Letní zahrádka zalitá sluncem')">
-          <img src="img/zahradka-slunce.jpg" alt="Zahrádka slunce" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="zahradka" onclick="openLightbox('img/zahradka-slunce.jpg', 'Letní zahrádka zalitá sluncem')">
+          <img src="img/zahradka-slunce.jpg" alt="Zahrádka slunce"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Letní pohoda</span>
             <span class="text-sm text-stone-100">Zahrádka ve dvoře pro cyklisty i rodiny</span>
           </div>
         </div>
 
         <!-- 9. Salonek - slavnostní tabule s květinami -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="salonek" onclick="openLightbox('img/salonek-oslava.jpg', 'Slavnostní tabule v salonku s kouzelnou světelnou stěnou')">
-          <img src="img/salonek-oslava.jpg" alt="Slavnostní salonek" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="salonek"
+          onclick="openLightbox('img/salonek-oslava.jpg', 'Slavnostní tabule v salonku s kouzelnou světelnou stěnou')">
+          <img src="img/salonek-oslava.jpg" alt="Slavnostní salonek"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Salonek & Oslavy</span>
             <span class="text-sm text-stone-100">Výzdoba pro narozeniny a rodinné oslavy</span>
           </div>
         </div>
 
         <!-- 10. Salonek - detail tabule -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="salonek" onclick="openLightbox('img/salonek-tabule.jpg', 'Podkrovní salonek připravený pro hostinu')">
-          <img src="img/salonek-tabule.jpg" alt="Podkrovní tabule" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="salonek"
+          onclick="openLightbox('img/salonek-tabule.jpg', 'Podkrovní salonek připravený pro hostinu')">
+          <img src="img/salonek-tabule.jpg" alt="Podkrovní tabule"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Soukromé akce</span>
             <span class="text-sm text-stone-100">Kompletní servis a slavnostní stoly</span>
           </div>
         </div>
 
         <!-- 11. Pivo v ruce s koženou zástěrou Pilsner -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="pivo" onclick="openLightbox('img/pivo-hladinka.jpg', 'Dokonalá hladinka Pilsner Urquell načepovaná s láskou')">
-          <img src="img/pivo-hladinka.jpg" alt="Čerstvá hladinka piva" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="pivo"
+          onclick="openLightbox('img/pivo-hladinka.jpg', 'Dokonalá hladinka Pilsner Urquell načepovaná s láskou')">
+          <img src="img/pivo-hladinka.jpg" alt="Čerstvá hladinka piva"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Pivo s pěnou jako křen</span>
             <span class="text-sm text-stone-100">Plzeň načepovaná na hladinku</span>
           </div>
         </div>
 
         <!-- 12. Kožená zástěra Pilsner Urquell na cihlové zdi -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="pivo" onclick="openLightbox('img/zastera-pilsner.jpg', 'Stylová kožená výčepní zástěra Pilsner Urquell')">
-          <img src="img/zastera-pilsner.jpg" alt="Kožená zástěra Pilsner Urquell" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="pivo"
+          onclick="openLightbox('img/zastera-pilsner.jpg', 'Stylová kožená výčepní zástěra Pilsner Urquell')">
+          <img src="img/zastera-pilsner.jpg" alt="Kožená zástěra Pilsner Urquell"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Pivní tradice</span>
             <span class="text-sm text-stone-100">Originální kožená zástěra výčepního</span>
           </div>
         </div>
 
         <!-- 13. Půllitrový světelný lustr -->
-        <div class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg" data-category="pivo" onclick="openLightbox('img/lustr-pullitr.jpg', 'Stylový lustr vyrobený z originálního pivního půllitru')">
-          <img src="img/lustr-pullitr.jpg" alt="Pivní lampa" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
+        <div
+          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          data-category="pivo"
+          onclick="openLightbox('img/lustr-pullitr.jpg', 'Stylový lustr vyrobený z originálního pivního půllitru')">
+          <img src="img/lustr-pullitr.jpg" alt="Pivní lampa"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Hospodský detail</span>
             <span class="text-sm text-stone-100">Originální půllitrové svítidlo</span>
           </div>
@@ -784,20 +876,24 @@
   </section>
 
   <!-- ==================== SALONEK & OSLAVY ==================== -->
-  <section id="salonek" class="py-16 sm:py-24 bg-gradient-to-b from-stone-950 via-stone-900/60 to-stone-950 border-b border-stone-800/60">
+  <section id="salonek"
+    class="py-16 sm:py-24 bg-gradient-to-b from-stone-950 via-stone-900/60 to-stone-950 border-b border-stone-800/60">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      
+
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <!-- Text o salonku -->
         <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-4">
             <i class="fa-solid fa-champagne-glasses"></i> Soukromý prostor až pro 30 osob
           </div>
           <h2 class="text-3xl sm:text-5xl font-extrabold text-stone-100 mb-6 leading-tight">
             Slavnostní podkrovní <span class="text-amber-400">salonek</span> pro vaše akce
           </h2>
           <p class="text-stone-300 text-base leading-relaxed mb-6 font-normal">
-            Hledáte v Opavě příjemné, útulné a nikým nerušené místo pro rodinnou oslavu, křtiny, smuteční hostinu, firemní večírek nebo narozeniny? Náš podkrovní dřevěný salonek nabízí kompletní soukromí a kouzelnou atmosféru se světelnou stěnou.
+            Hledáte v Opavě příjemné, útulné a nikým nerušené místo pro rodinnou oslavu, křtiny, smuteční hostinu,
+            firemní večírek nebo narozeniny? Náš podkrovní dřevěný salonek nabízí kompletní soukromí a kouzelnou
+            atmosféru se světelnou stěnou.
           </p>
 
           <div class="space-y-3 mb-8 text-sm">
@@ -819,11 +915,8 @@
             </div>
           </div>
 
-          <a 
-            href="#rezervace" 
-            onclick="document.querySelector('input[value=\'Soukromý salonek\']').checked = true;"
-            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-base uppercase tracking-wider shadow-lg shadow-amber-500/20 active:scale-95 transition-all"
-          >
+          <a href="#rezervace" onclick="document.querySelector('input[value=\'Soukromý salonek\']').checked = true;"
+            class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-base uppercase tracking-wider shadow-lg shadow-amber-500/20 active:scale-95 transition-all">
             <i class="fa-solid fa-calendar-plus text-base"></i>
             <span>Poptat termín v salonku</span>
           </a>
@@ -832,28 +925,16 @@
         <!-- Obrázky salonku -->
         <div class="grid grid-cols-2 gap-4">
           <div class="space-y-4">
-            <img 
-              src="img/salonek-oslava.jpg" 
-              alt="Slavnostní tabule v salonku" 
-              class="w-full h-56 object-cover rounded-2xl border border-stone-800 shadow-xl"
-            >
-            <img 
-              src="img/salonek-vyzdoba.jpg" 
-              alt="Výzdoba stolu salonek" 
-              class="w-full h-44 object-cover rounded-2xl border border-stone-800 shadow-xl"
-            >
+            <img src="img/salonek-oslava.jpg" alt="Slavnostní tabule v salonku"
+              class="w-full h-56 object-cover rounded-2xl border border-stone-800 shadow-xl">
+            <img src="img/salonek-vyzdoba.jpg" alt="Výzdoba stolu salonek"
+              class="w-full h-44 object-cover rounded-2xl border border-stone-800 shadow-xl">
           </div>
           <div class="space-y-4 pt-6">
-            <img 
-              src="img/salonek-stena.jpg" 
-              alt="Světelná stěna a stoly" 
-              class="w-full h-44 object-cover rounded-2xl border border-stone-800 shadow-xl"
-            >
-            <img 
-              src="img/salonek-tabule.jpg" 
-              alt="Podkrovní tabule salonek" 
-              class="w-full h-56 object-cover rounded-2xl border border-stone-800 shadow-xl"
-            >
+            <img src="img/salonek-stena.jpg" alt="Světelná stěna a stoly"
+              class="w-full h-44 object-cover rounded-2xl border border-stone-800 shadow-xl">
+            <img src="img/salonek-tabule.jpg" alt="Podkrovní tabule salonek"
+              class="w-full h-56 object-cover rounded-2xl border border-stone-800 shadow-xl">
           </div>
         </div>
 
@@ -864,7 +945,7 @@
   <!-- ==================== REZERVAČNÍ FORMULÁŘ ==================== -->
   <section id="rezervace" class="py-16 sm:py-24 bg-stone-950 border-b border-stone-800/60">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
-      
+
       <div class="text-center mb-8">
         <span class="text-amber-400 text-xs font-bold tracking-widest uppercase block mb-1">
           Rezervace stolu & salonku
@@ -879,27 +960,33 @@
 
       <!-- Karta formuláře -->
       <div class="p-6 sm:p-8 rounded-3xl bg-stone-900 border border-stone-800 shadow-2xl relative">
-        
+
         <form id="reservationForm" onsubmit="handleReservation(event)" class="space-y-5">
-          
+
           <!-- Výběr prostoru -->
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-2">
               Vyberte prostor *
             </label>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-stone-950/80 border border-stone-800 hover:border-amber-500/60 cursor-pointer transition-colors">
-                <input type="radio" name="resArea" value="Hlavní sál" checked class="w-4 h-4 text-amber-500 focus:ring-amber-500 bg-stone-900 border-stone-700">
+              <label
+                class="flex items-center gap-3 p-3.5 rounded-xl bg-stone-950/80 border border-stone-800 hover:border-amber-500/60 cursor-pointer transition-colors">
+                <input type="radio" name="resArea" value="Hlavní sál"
+                  class="w-4 h-4 text-amber-500 focus:ring-amber-500 bg-stone-900 border-stone-700">
                 <span class="text-xs font-semibold text-stone-200">Hlavní sál</span>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-stone-950/80 border border-amber-500/50 hover:border-amber-500 cursor-pointer transition-colors">
-                <input type="radio" name="resArea" value="Soukromý salonek" class="w-4 h-4 text-amber-500 focus:ring-amber-500 bg-stone-900 border-stone-700">
-                <span class="text-xs font-bold text-amber-400">Salonek (Oslavy)</span>
+              <label
+                class="flex items-center gap-3 p-3.5 rounded-xl bg-stone-950/80 border border-stone-800 hover:border-amber-500/60 cursor-pointer">
+                <input type="radio" name="resArea" value="Soukromý salonek"
+                  class="w-4 h-4 text-amber-500 focus:ring-amber-500 bg-stone-900 border-stone-700">
+                <span class="text-xs font-semibold text-stone-200">Salonek (Oslavy)</span>
               </label>
 
-              <label class="flex items-center gap-3 p-3.5 rounded-xl bg-stone-950/80 border border-stone-800 hover:border-amber-500/60 cursor-pointer transition-colors">
-                <input type="radio" name="resArea" value="Letní zahrádka" class="w-4 h-4 text-amber-500 focus:ring-amber-500 bg-stone-900 border-stone-700">
+              <label
+                class="flex items-center gap-3 p-3.5 rounded-xl bg-stone-950/80 border border-stone-800 hover:border-amber-500/60 cursor-pointer transition-colors">
+                <input type="radio" name="resArea" value="Letní zahrádka"
+                  class="w-4 h-4 text-amber-500 focus:ring-amber-500 bg-stone-900 border-stone-700">
                 <span class="text-xs font-semibold text-stone-200">Letní zahrádka</span>
               </label>
             </div>
@@ -911,14 +998,16 @@
               <label for="resName" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1.5">
                 Jméno a Příjmení *
               </label>
-              <input type="text" id="resName" required placeholder="Jan Novák" class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 text-sm">
+              <input type="text" id="resName" required placeholder="Jan Novák"
+                class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 text-sm">
             </div>
 
             <div>
               <label for="resPhone" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1.5">
                 Telefonní číslo *
               </label>
-              <input type="tel" id="resPhone" required placeholder="+420 777 000 000" class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 text-sm">
+              <input type="tel" id="resPhone" required placeholder="+420 777 000 000"
+                class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 text-sm">
             </div>
           </div>
 
@@ -927,8 +1016,10 @@
             <label for="resEmail" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1.5">
               Váš E-mail (pro doručení potvrzení rezervace) *
             </label>
-            <input type="email" id="resEmail" required placeholder="jan.novak@email.cz" class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 text-sm">
-            <span class="block text-[11px] text-stone-400 mt-1">Na tuto adresu vám ihned dorazí automatické potvrzení s podrobnostmi rezervace.</span>
+            <input type="email" id="resEmail" required placeholder="jan.novak@email.cz"
+              class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 text-sm">
+            <span class="block text-[11px] text-stone-400 mt-1">Na tuto adresu vám ihned dorazí automatické potvrzení s
+              podrobnostmi rezervace.</span>
           </div>
 
           <!-- Datum, Čas, Hosté -->
@@ -937,14 +1028,16 @@
               <label for="resDate" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1.5">
                 Datum návštěvy *
               </label>
-              <input type="date" id="resDate" required class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-amber-500 text-sm">
+              <input type="date" id="resDate" required
+                class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-amber-500 text-sm">
             </div>
 
             <div>
               <label for="resTime" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1.5">
                 Čas *
               </label>
-              <select id="resTime" required class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-amber-500 text-sm">
+              <select id="resTime" required
+                class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-amber-500 text-sm">
                 <option value="15:00">15:00</option>
                 <option value="16:00">16:00</option>
                 <option value="17:00">17:00</option>
@@ -959,7 +1052,8 @@
               <label for="resGuests" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1.5">
                 Počet osob *
               </label>
-              <select id="resGuests" required class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-amber-500 text-sm">
+              <select id="resGuests" required
+                class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-amber-500 text-sm">
                 <option value="1-2 osoby">1–2 osoby</option>
                 <option value="3-4 osoby" selected>3–4 osoby</option>
                 <option value="5-8 osob">5–8 osob</option>
@@ -974,27 +1068,32 @@
             <label for="resNote" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1.5">
               Poznámka / Zvláštní přání (oslava, studené prkýnko, sledování zápasu...)
             </label>
-            <textarea id="resNote" rows="2" placeholder="Napište nám podrobnosti..." class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 text-sm"></textarea>
+            <textarea id="resNote" rows="2" placeholder="Napište nám podrobnosti..."
+              class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 text-sm"></textarea>
           </div>
 
           <!-- Tlačítko odeslání -->
-          <button type="submit" id="submitBtn" class="w-full py-4 rounded-xl text-base font-bold uppercase tracking-wider bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-xl shadow-amber-500/25 active:scale-[0.99] transition-all flex items-center justify-center gap-3">
-            <i class="fa-solid fa-paper-plane text-lg" id="submitBtnIcon"></i> 
-            <span id="submitBtnText">Odeslat rezervaci & zaslat potvrzení na e-mail</span>
+          <button type="submit" id="submitBtn"
+            class="w-full py-4 rounded-xl text-base font-bold uppercase tracking-wider bg-amber-500 hover:bg-amber-400 text-stone-950 shadow-xl shadow-amber-500/25 active:scale-[0.99] transition-all flex items-center justify-center gap-3">
+            <i class="fa-solid fa-paper-plane text-lg" id="submitBtnIcon"></i>
+            <span id="submitBtnText">Odeslat rezervaci</span>
           </button>
         </form>
 
         <!-- Potvrzení v UI -->
-        <div id="reservationSuccess" class="hidden mt-6 p-5 rounded-2xl bg-emerald-950/80 border border-emerald-600/50 text-emerald-200">
+        <div id="reservationSuccess"
+          class="hidden mt-6 p-5 rounded-2xl bg-emerald-950/80 border border-emerald-600/50 text-emerald-200">
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-circle-check text-2xl text-emerald-400 mt-0.5"></i>
             <div class="space-y-2 w-full">
               <h4 class="font-bold text-base text-white">Rezervace byla úspěšně odeslána!</h4>
               <p class="text-xs text-emerald-200/90 leading-relaxed" id="successDetailsText"></p>
-              
+
               <div class="pt-3 border-t border-emerald-800/60 flex flex-wrap items-center gap-3">
-                <span class="text-xs text-emerald-300">✉️ Potvrzovací e-mail byl odeslán na vaši adresu i personálu hospody.</span>
-                <a id="whatsappShareBtn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-semibold text-xs transition-colors shadow">
+                <span class="text-xs text-emerald-300">✉️ Potvrzovací e-mail byl odeslán na vaši adresu i personálu
+                  hospody.</span>
+                <a id="whatsappShareBtn" href="#" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-semibold text-xs transition-colors shadow">
                   <i class="fa-brands fa-whatsapp text-sm"></i> Odeslat také kopii na WhatsApp
                 </a>
               </div>
@@ -1003,14 +1102,17 @@
         </div>
 
         <!-- Chybové hlášení v UI -->
-        <div id="reservationError" class="hidden mt-6 p-5 rounded-2xl bg-rose-950/90 border border-rose-600/50 text-rose-200">
+        <div id="reservationError"
+          class="hidden mt-6 p-5 rounded-2xl bg-rose-950/90 border border-rose-600/50 text-rose-200">
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-triangle-exclamation text-2xl text-rose-400 mt-0.5"></i>
             <div class="space-y-2 w-full">
               <h4 class="font-bold text-base text-white">Odeslání e-mailu se nezdařilo</h4>
-              <p class="text-xs text-rose-200/90 leading-relaxed" id="errorDetailsText">Zkontrolujte prosím připojení nebo nastavení služby.</p>
+              <p class="text-xs text-rose-200/90 leading-relaxed" id="errorDetailsText">Zkontrolujte prosím připojení
+                nebo nastavení služby.</p>
               <div class="pt-2 flex flex-wrap items-center gap-3">
-                <a id="whatsappFallbackBtn" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs uppercase tracking-wider transition-colors shadow">
+                <a id="whatsappFallbackBtn" href="#" target="_blank" rel="noopener noreferrer"
+                  class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs uppercase tracking-wider transition-colors shadow">
                   <i class="fa-brands fa-whatsapp text-sm"></i> Odeslat rezervaci přímo na WhatsApp (+420 777 743 750)
                 </a>
               </div>
@@ -1023,31 +1125,98 @@
     </div>
   </section>
 
+  <!-- Sekce Kontakt a Kde nás najdete (Tmavá kompaktní verze) -->
+  <section id="kontakt" class="py-12 px-4 max-w-5xl mx-auto font-sans">
+    <div class="text-center mb-8">
+      <h2 class="text-3xl font-bold text-white tracking-tight">Kde nás najdete</h2>
+      <div class="w-12 h-0.5 bg-brand-gold mx-auto mt-2"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
+      <!-- Informační box (tmavý podklad, světlý text) -->
+      <div class="bg-[#272522] rounded-xl shadow-lg border border-stone-800 p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-1">Hospoda U Šuláků</h3>
+          <p class="text-sm text-stone-300 mb-6">Pekařská 349/99, 747 05 Opava – Kateřinky</p>
+
+          <div class="space-y-4 text-sm">
+            <div>
+              <span class="block text-xs font-semibold uppercase tracking-wider text-stone-400">Telefon &
+                Rezervace</span>
+              <a href="tel:+420777743750"
+                class="text-lg font-bold text-brand-gold hover:text-amber-300 transition-colors">
+                +420 777 743 750
+              </a>
+            </div>
+
+            <div class="pt-3 border-t border-stone-700/60">
+              <span class="block text-xs font-semibold uppercase tracking-wider text-stone-400 mb-2">Otevírací
+                doba</span>
+              <div class="space-y-1.5 text-stone-200">
+                <div class="flex justify-between">
+                  <span>Pondělí – Čtvrtek</span>
+                  <span class="font-semibold text-white">14:00 – 22:00</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Pátek – Sobota</span>
+                  <span class="font-semibold text-brand-gold">14:00 – 23:00</span>
+                </div>
+                <div class="flex justify-between">
+                  <span>Neděle</span>
+                  <span class="font-semibold text-white">14:00 – 21:00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-stone-700/60">
+          <a href="https://maps.google.com/?q=Hospoda+U+Šuláků,+Pekařská+349/99,+Opava" target="_blank"
+            rel="noopener noreferrer"
+            class="block w-full py-2.5 px-4 text-center text-sm font-bold text-[#272522] bg-brand-gold hover:bg-amber-400 rounded-lg transition-colors shadow">
+            Navigovat do hospody
+          </a>
+        </div>
+      </div>
+
+      <!-- Kompaktní mapa s tmavším orámováním -->
+      <div class="rounded-xl overflow-hidden shadow-lg border border-stone-800 h-64 md:h-auto min-h-[260px] relative">
+        <iframe title="Mapa Hospoda U Šuláků"
+          src="https://maps.google.com/maps?q=Peka%C5%99sk%C3%A1%20349%2F99%2C%20Opava&t=&z=16&ie=UTF8&iwloc=&output=embed"
+          class="w-full h-full border-0 absolute inset-0" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+
   <!-- ==================== PATIČKA ==================== -->
   <footer class="py-12 bg-stone-950 border-t border-stone-900 text-stone-400 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
-      
+    <div
+      class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
+
       <div class="flex items-center gap-3">
-        <img 
-          src="img/logo.png" 
-          alt="U Šuláků pečeť" 
+        <img src="img/logo.png" alt="U Šuláků pečeť"
           class="w-10 h-10 rounded-full border border-amber-500/50 bg-stone-900 object-cover"
-          onerror="this.onerror=null; this.src='https://placehold.co/100x100/1c1713/f3a738?text=U+Šuláků'"
-        >
+          onerror="this.onerror=null; this.src='https://placehold.co/100x100/1c1713/f3a738?text=U+Šuláků'">
         <div>
           <span class="block text-sm font-bold text-stone-200">HOSPODA U ŠULÁKŮ</span>
-          <span class="block text-[11px] text-stone-500">Pekařská 349/99, 747 05 Opava-Kateřinky &bull; Tel: +420 777 743 750</span>
+          <span class="block text-[11px] text-stone-500">Pekařská 349/99, 747 05 Opava-Kateřinky &bull; Tel: +420 777
+            743 750</span>
         </div>
       </div>
 
       <div class="flex items-center gap-3">
-        <a href="https://www.facebook.com/hospoda.u.sulaku.2025?locale=cs_CZ" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors p-2">
+        <a href="https://www.facebook.com/hospoda.u.sulaku.2025?locale=cs_CZ" target="_blank" rel="noopener noreferrer"
+          class="hover:text-blue-400 transition-colors p-2">
           <i class="fa-brands fa-facebook-f text-base"></i>
         </a>
-        <a href="https://www.instagram.com/tenisovyklubopava/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400 transition-colors p-2">
+        <a href="https://www.instagram.com/tenisovyklubopava/" target="_blank" rel="noopener noreferrer"
+          class="hover:text-pink-400 transition-colors p-2">
           <i class="fa-brands fa-instagram text-base"></i>
         </a>
-        <a href="https://maps.google.com/?q=Hospoda+U+Šuláků+Pekařská+349/99+Opava" target="_blank" rel="noopener noreferrer" class="hover:text-amber-400 transition-colors p-2">
+        <a href="https://maps.google.com/?q=Hospoda+U+Šuláků+Pekařská+349/99+Opava" target="_blank"
+          rel="noopener noreferrer" class="hover:text-amber-400 transition-colors p-2">
           <i class="fa-solid fa-location-dot text-base"></i>
         </a>
       </div>
@@ -1060,12 +1229,15 @@
   </footer>
 
   <!-- ==================== LIGHTBOX MODAL (ZVĚTŠENÍ FOTEK) ==================== -->
-  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4 backdrop-blur-sm" onclick="closeLightbox(event)">
+  <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4 backdrop-blur-sm"
+    onclick="closeLightbox(event)">
     <div class="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center">
-      <button onclick="closeLightbox(null)" class="absolute -top-12 right-0 text-white hover:text-amber-400 text-3xl font-bold transition-colors">
+      <button onclick="closeLightbox(null)"
+        class="absolute -top-12 right-0 text-white hover:text-amber-400 text-3xl font-bold transition-colors">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <img id="lightboxImg" src="" alt="Zvětšená fotografie" class="max-h-[80vh] w-auto max-w-full rounded-2xl border border-stone-800 shadow-2xl object-contain">
+      <img id="lightboxImg" src="" alt="Zvětšená fotografie"
+        class="max-h-[80vh] w-auto max-w-full rounded-2xl border border-stone-800 shadow-2xl object-contain">
       <p id="lightboxCaption" class="mt-3 text-stone-300 text-sm text-center font-medium"></p>
     </div>
   </div>
@@ -1208,15 +1380,15 @@
       if (submitBtnIcon) submitBtnIcon.className = 'fa-solid fa-spinner fa-spin';
 
       // Příprava WhatsApp zprávy
-      const waMessage = 
-`🍻 *REZERVACE – Hospoda U Šuláků*\n` +
-`• *Jméno:* ${name}\n` +
-`• *Telefon:* ${phone}\n` +
-`• *E-mail:* ${email}\n` +
-`• *Termín:* ${date} v ${time}\n` +
-`• *Počet osob:* ${guests}\n` +
-`• *Prostor:* ${area}\n` +
-`• *Poznámka:* ${note}`;
+      const waMessage =
+        `🍻 *REZERVACE – Hospoda U Šuláků*\n` +
+        `• *Jméno:* ${name}\n` +
+        `• *Telefon:* ${phone}\n` +
+        `• *E-mail:* ${email}\n` +
+        `• *Termín:* ${date} v ${time}\n` +
+        `• *Počet osob:* ${guests}\n` +
+        `• *Prostor:* ${area}\n` +
+        `• *Poznámka:* ${note}`;
       const waUrl = `https://wa.me/420777743750?text=${encodeURIComponent(waMessage)}`;
       if (waBtn) waBtn.href = waUrl;
       if (waFallbackBtn) waFallbackBtn.href = waUrl;
@@ -1275,4 +1447,5 @@
     }
   </script>
 </body>
+
 </html>
