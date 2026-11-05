@@ -1587,18 +1587,14 @@
 </div>
 
 <script>
-  // ==========================================
-  // NASTAVENÍ AKTUÁLNÍ AKCE (TADY MĚNÍŠ ÚDAJE)
-  // ==========================================
   const currentPromo = {
-    active: true,                     // true = zobrazovat okno, false = vypnout (žádná akce neběží)
-    image: "img/husihody.jpg",        // cesta k letáku ve složce webu
-    title: "Svatomartinské husí hody", // název akce
+    active: true,                     // true = zapnuto, false = vypnuto
+    image: "img/husihody.png",        // cesta k letáku
+    title: "Svatomartinské husí hody",
     subtitle: "8. – 9. listopadu v Hospodě U Šuláků",
     buttonText: "Rezervovat stůl",
-    buttonLink: "#rezervace"          // kam tlačítko odkáže (#rezervace hodí dolů na formulář)
+    buttonLink: "#rezervace"
   };
-
 
   document.addEventListener('DOMContentLoaded', () => {
     const promoModal = document.getElementById('promoModal');
@@ -1607,49 +1603,73 @@
     const promoTitle = document.getElementById('promoTitle');
     const promoSub = document.getElementById('promoSub');
     const promoCtaBtn = document.getElementById('promoCtaBtn');
+    const openPromoFloatingBtn = document.getElementById('openPromoFloatingBtn');
+    const floatingBtnText = document.getElementById('floatingBtnText');
 
     if (!promoModal || !currentPromo.active) return;
 
-    // Nastavení dat z konfigurace
+    // Naplnění dat
     promoImage.src = currentPromo.image;
     promoImage.alt = currentPromo.title;
     promoTitle.textContent = currentPromo.title;
     promoSub.textContent = currentPromo.subtitle;
     promoCtaBtn.textContent = currentPromo.buttonText;
     promoCtaBtn.href = currentPromo.buttonLink;
+    if (floatingBtnText) floatingBtnText.textContent = currentPromo.title;
 
-    // Kontrola, zda návštěvník už okno v rámci návštěvy nezavřel
-    const isShown = sessionStorage.getItem('sulak_promo_closed');
-
-    if (!isShown) {
-      // Malá prodleva (600 ms), aby web nejdřív hezky naběhl
-      setTimeout(() => {
-        promoModal.classList.remove('hidden');
-        promoModal.classList.add('flex');
-      }, 600);
+    // Funkce pro otevření
+    function showPromo() {
+      promoModal.classList.remove('hidden');
+      promoModal.classList.add('flex');
+      if (openPromoFloatingBtn) openPromoFloatingBtn.classList.add('hidden');
     }
 
     // Funkce pro zavření
-    function closePromo() {
+    function hidePromo() {
       promoModal.classList.add('hidden');
       promoModal.classList.remove('flex');
-      // Uložíme do paměti prohlížeče, aby to během jedné relace nevyskakovalo znova
       sessionStorage.setItem('sulak_promo_closed', 'true');
+      // Po zavření zobrazíme plovoucí tlačítko
+      if (openPromoFloatingBtn) {
+        openPromoFloatingBtn.classList.remove('hidden');
+        openPromoFloatingBtn.classList.add('flex');
+      }
     }
 
-    closePromoBtn.addEventListener('click', closePromo);
-
-    // Zavření při kliknutí na tlačítko rezervace
-    promoCtaBtn.addEventListener('click', closePromo);
-
-    // Zavření kliknutím mimo okno (na tmavé pozadí)
-    promoModal.addEventListener('click', (e) => {
-      if (e.target === promoModal) {
-        closePromo();
+    // Automatické zobrazení při prvním načtení (pokud ještě nebylo zavřeno)
+    const isClosed = sessionStorage.getItem('sulak_promo_closed');
+    if (!isClosed) {
+      setTimeout(showPromo, 600);
+    } else {
+      // Pokud už bylo zavřeno dříve, necháme viditelné plovoucí tlačítko
+      if (openPromoFloatingBtn) {
+        openPromoFloatingBtn.classList.remove('hidden');
+        openPromoFloatingBtn.classList.add('flex');
       }
+    }
+
+    // Události
+    closePromoBtn.addEventListener('click', hidePromo);
+    promoCtaBtn.addEventListener('click', hidePromo);
+    promoModal.addEventListener('click', (e) => {
+      if (e.target === promoModal) hidePromo();
     });
+
+    if (openPromoFloatingBtn) {
+      openPromoFloatingBtn.addEventListener('click', showPromo);
+    }
   });
 </script>
+
+<!-- Plovoucí tlačítko pro opětovné otevření akce -->
+<button 
+  id="openPromoFloatingBtn" 
+  type="button" 
+  class="fixed bottom-6 right-6 z-40 hidden items-center gap-2.5 px-4 py-2.5 rounded-full bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs uppercase tracking-wider shadow-xl shadow-amber-500/20 border border-amber-300 transition-all hover:scale-105 active:scale-95"
+>
+  <i class="fa-solid fa-bullhorn text-sm"></i>
+  <span id="floatingBtnText">Aktuální akce</span>
+</button>
 
 </body>
 
