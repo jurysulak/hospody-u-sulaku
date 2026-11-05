@@ -1544,9 +1544,9 @@
   </div>
 </div>
 
-<!-- Promo / Akční vyskakovací okno -->
-<div id="promoModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/85 backdrop-blur-sm transition-opacity duration-300">
-  <div class="relative w-full max-w-lg rounded-2xl bg-[#1c1917] border border-amber-500/50 shadow-2xl overflow-hidden flex flex-col">
+<!-- Promo / Akční vyskakovací okno (posunuté do horní poloviny) -->
+<div id="promoModal" class="fixed inset-0 z-50 hidden items-start justify-center p-4 pt-12 sm:pt-20 bg-black/85 backdrop-blur-sm transition-opacity duration-300 overflow-y-auto">
+  <div class="relative w-full max-w-lg rounded-2xl bg-[#1c1917] border border-amber-500/50 shadow-2xl overflow-hidden flex flex-col my-auto sm:my-0">
     
     <!-- Tlačítko Zavřít (křížek v rohu) -->
     <button 
@@ -1559,12 +1559,12 @@
     </button>
 
     <!-- Plakát / Leták akce -->
-    <div class="relative w-full bg-stone-950 flex items-center justify-center overflow-hidden max-h-[65vh]">
+    <div class="relative w-full bg-stone-950 flex items-center justify-center overflow-hidden max-h-[60vh]">
       <img 
         id="promoImage" 
         src="img/husihody.jpg" 
         alt="Aktuální akce" 
-        class="w-full h-auto object-contain max-h-[65vh] block"
+        class="w-full h-auto object-contain max-h-[60vh] block"
       />
     </div>
 
@@ -1587,9 +1587,12 @@
 </div>
 
 <script>
+  // ==========================================
+  // NASTAVENÍ AKTUÁLNÍ AKCE
+  // ==========================================
   const currentPromo = {
     active: true,                     // true = zapnuto, false = vypnuto
-    image: "img/husihody.png",        // cesta k letáku
+    image: "img/husihody.jpg",        // změněno na .jpg
     title: "Svatomartinské husí hody",
     subtitle: "8. – 9. listopadu v Hospodě U Šuláků",
     buttonText: "Rezervovat stůl",
@@ -1608,7 +1611,6 @@
 
     if (!promoModal || !currentPromo.active) return;
 
-    // Naplnění dat
     promoImage.src = currentPromo.image;
     promoImage.alt = currentPromo.title;
     promoTitle.textContent = currentPromo.title;
@@ -1617,38 +1619,32 @@
     promoCtaBtn.href = currentPromo.buttonLink;
     if (floatingBtnText) floatingBtnText.textContent = currentPromo.title;
 
-    // Funkce pro otevření
     function showPromo() {
       promoModal.classList.remove('hidden');
       promoModal.classList.add('flex');
       if (openPromoFloatingBtn) openPromoFloatingBtn.classList.add('hidden');
     }
 
-    // Funkce pro zavření
     function hidePromo() {
       promoModal.classList.add('hidden');
       promoModal.classList.remove('flex');
       sessionStorage.setItem('sulak_promo_closed', 'true');
-      // Po zavření zobrazíme plovoucí tlačítko
       if (openPromoFloatingBtn) {
         openPromoFloatingBtn.classList.remove('hidden');
         openPromoFloatingBtn.classList.add('flex');
       }
     }
 
-    // Automatické zobrazení při prvním načtení (pokud ještě nebylo zavřeno)
     const isClosed = sessionStorage.getItem('sulak_promo_closed');
     if (!isClosed) {
       setTimeout(showPromo, 600);
     } else {
-      // Pokud už bylo zavřeno dříve, necháme viditelné plovoucí tlačítko
       if (openPromoFloatingBtn) {
         openPromoFloatingBtn.classList.remove('hidden');
         openPromoFloatingBtn.classList.add('flex');
       }
     }
 
-    // Události
     closePromoBtn.addEventListener('click', hidePromo);
     promoCtaBtn.addEventListener('click', hidePromo);
     promoModal.addEventListener('click', (e) => {
