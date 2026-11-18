@@ -4,9 +4,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hospoda U Šuláků</title>
+  <title>Hospoda U Šuláků – Opava-Kateřinky | Plzeň, Radegast, salonek na oslavy</title>
   <meta name="description"
     content="Tradiční poctivá česká hospoda U Šuláků v Opavě-Kateřinkách. Tanková Plzeň, Radegast, bramborákové speciality, salonek na oslavy a letní zahrádka.">
+  <link rel="canonical" href="https://hospodausulaku.cz/">
+
+  <!-- Náhled odkazu při sdílení (Facebook, WhatsApp, Messenger) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:site_name" content="Hospoda U Šuláků">
+  <meta property="og:title" content="Hospoda U Šuláků – Opava-Kateřinky">
+  <meta property="og:description"
+    content="Poctivá česká hospoda s cihlovými klenbami. Pilsner Urquell, Radegast, bramborákové speciality, salonek na oslavy a letní zahrádka.">
+  <meta property="og:url" content="https://hospodausulaku.cz/">
+  <meta property="og:image" content="https://hospodausulaku.cz/img/interier-klenba.jpg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1065">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Údaje pro Google (adresa, telefon, otevírací doba) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BarOrPub",
+    "name": "Hospoda U Šuláků",
+    "url": "https://hospodausulaku.cz/",
+    "telephone": "+420777743750",
+    "image": "https://hospodausulaku.cz/img/interier-klenba.jpg",
+    "logo": "https://hospodausulaku.cz/img/logo-512.webp",
+    "servesCuisine": "Česká kuchyně",
+    "acceptsReservations": true,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Pekařská 349/99",
+      "addressLocality": "Opava",
+      "postalCode": "747 05",
+      "addressCountry": "CZ"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Monday", "opens": "15:00", "closes": "21:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday"], "opens": "15:00", "closes": "22:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday", "Saturday"], "opens": "15:00", "closes": "23:00" }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/hospoda.u.sulaku.2025",
+      "https://www.instagram.com/u_sulaku/"
+    ]
+  }
+  </script>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -82,6 +127,7 @@
       <!-- Hlavní menu (Desktop) -->
       <nav class="hidden md:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold text-stone-300">
         <a href="#nabidka" class="hover:text-amber-400 transition-colors">Jídelní & Nápojový lístek</a>
+        <a href="#akce" data-akce-link class="hidden text-red-400 hover:text-red-300 transition-colors font-bold">Akce</a>
         <a href="#galerie" class="hover:text-amber-400 transition-colors">Fotogalerie</a>
         <a href="#salonek" class="text-amber-400 hover:text-amber-300 transition-colors font-bold">Salonek & Oslavy</a>
         <a href="#kontakt" class="hover:text-amber-400 transition-colors">Kde nás najdete</a>
@@ -118,6 +164,7 @@
     <nav id="mobileNav" class="hidden md:hidden border-t border-stone-800/80">
       <div class="px-4 py-2 flex flex-col text-sm font-semibold uppercase tracking-wider text-stone-200">
         <a href="#nabidka" class="py-3.5 border-b border-stone-800/60">Jídelní & Nápojový lístek</a>
+        <a href="#akce" data-akce-link class="hidden py-3.5 border-b border-stone-800/60 text-red-400">Akce</a>
         <a href="#galerie" class="py-3.5 border-b border-stone-800/60">Fotogalerie</a>
         <a href="#salonek" class="py-3.5 border-b border-stone-800/60 text-amber-400">Salonek & Oslavy</a>
         <a href="#rezervace" class="py-3.5 border-b border-stone-800/60">Rezervace</a>
@@ -229,6 +276,19 @@
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ==================== AKCE U NÁS ==================== -->
+  <!-- Ukáže se sama, jen když je ve skriptu v seznamu AKCE nějaká aktuální akce. -->
+  <section id="akce" class="hidden py-14 sm:py-20 bg-stone-950 border-b border-stone-800/60">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-10">
+        <span class="text-red-400 text-xs font-bold tracking-widest uppercase block mb-1">Nenechte si ujít</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-100 mb-3">Akce u nás</h2>
+        <p class="text-sm text-stone-400">Speciální menu a akce. Počet míst bývá omezený, doporučujeme rezervaci.</p>
+      </div>
+      <div id="akceSeznam" class="flex flex-wrap justify-center gap-6"></div>
     </div>
   </section>
 
@@ -734,11 +794,11 @@
       </div>
 
       <!-- Mřížka fotek -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
 
         <!-- 1. Interiér s klenbou -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="interier"
           onclick="openLightbox('img/interier-klenba.jpg', 'Hlavní sál s cihlovými klenbami a posezením')">
           <img src="img/interier-klenba.jpg" alt="Hlavní sál U Šuláků"
@@ -752,7 +812,7 @@
 
         <!-- 2. Interiér - klenba s průhledem k baru -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="interier" onclick="openLightbox('img/interier-bar.jpg', 'Cihlové klenby a průhled k baru')">
           <img src="img/interier-bar.jpg" alt="Cihlové klenby"
             loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -765,7 +825,7 @@
 
         <!-- 3. Interiér - sál s televizí pro sport -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="interier"
           onclick="openLightbox('img/interier-tv.jpg', 'Posezení u velké TV pro sportovní přenosy')">
           <img src="img/interier-tv.jpg" alt="Sál s televizí"
@@ -779,7 +839,7 @@
 
         <!-- 4. Vstupní schodiště s chmelovou malbou -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="interier"
           onclick="openLightbox('img/vstup-schodiste.jpg', 'Vstupní hala se schodištěm do salonku')">
           <img src="img/vstup-schodiste.jpg" alt="Vstupní schodiště"
@@ -793,7 +853,7 @@
 
         <!-- 5. Denní zahrádka pod slunečníky Pilsner -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="zahradka"
           onclick="openLightbox('img/zahradka-slunecniky.jpg', 'Slunečná letní zahrádka pod slunečníky Pilsner Urquell')">
           <img src="img/zahradka-slunecniky.jpg" alt="Denní zahrádka"
@@ -807,7 +867,7 @@
 
         <!-- 6. Zahrádka večer se světelným řetězem -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="zahradka"
           onclick="openLightbox('img/zahradka-vecer.jpg', 'Kouzelná večerní atmosféra na zahrádce se světýlky')">
           <img src="img/zahradka-vecer.jpg" alt="Večerní zahrádka"
@@ -821,7 +881,7 @@
 
         <!-- 7. Zahrádka noční pohled -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="zahradka" onclick="openLightbox('img/zahradka-noc.jpg', 'Noční atmosféra na dvoře U Šuláků')">
           <img src="img/zahradka-noc.jpg" alt="Noční zahrádka"
             loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -834,7 +894,7 @@
 
         <!-- 8. Zahrádka slunečné odpoledne -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="zahradka" onclick="openLightbox('img/zahradka-slunce.jpg', 'Letní zahrádka zalitá sluncem')">
           <img src="img/zahradka-slunce.jpg" alt="Zahrádka slunce"
             loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
@@ -847,7 +907,7 @@
 
         <!-- 9. Salonek - slavnostní tabule s květinami -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="salonek"
           onclick="openLightbox('img/salonek-oslava.jpg', 'Slavnostní tabule v salonku s kouzelnou světelnou stěnou')">
           <img src="img/salonek-oslava.jpg" alt="Slavnostní salonek"
@@ -861,7 +921,7 @@
 
         <!-- 10. Salonek - detail tabule -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="salonek"
           onclick="openLightbox('img/salonek-tabule.jpg', 'Podkrovní salonek připravený pro hostinu')">
           <img src="img/salonek-tabule.jpg" alt="Podkrovní tabule"
@@ -875,7 +935,7 @@
 
         <!-- 11. Pivo v ruce s koženou zástěrou Pilsner -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="pivo"
           onclick="openLightbox('img/pivo-hladinka.jpg', 'Dokonalá hladinka Pilsner Urquell načepovaná s láskou')">
           <img src="img/pivo-hladinka.jpg" alt="Čerstvá hladinka piva"
@@ -889,7 +949,7 @@
 
         <!-- 12. Kožená zástěra Pilsner Urquell na cihlové zdi -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="pivo"
           onclick="openLightbox('img/zastera-pilsner.jpg', 'Stylová kožená výčepní zástěra Pilsner Urquell')">
           <img src="img/zastera-pilsner.jpg" alt="Kožená zástěra Pilsner Urquell"
@@ -903,7 +963,7 @@
 
         <!-- 13. Půllitrový světelný lustr -->
         <div
-          class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
+          class="gallery-item group relative h-40 sm:h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="pivo"
           onclick="openLightbox('img/lustr-pullitr.jpg', 'Stylový lustr vyrobený z originálního pivního půllitru')">
           <img src="img/lustr-pullitr.jpg" alt="Pivní lampa"
@@ -960,7 +1020,7 @@
             </div>
           </div>
 
-          <a href="#rezervace" onclick="document.querySelector('input[value=\'Soukromý salonek\']').checked = true;"
+          <a href="#rezervace" onclick="vyberSalonek()"
             class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-base uppercase tracking-wider shadow-lg shadow-amber-500/20 active:scale-95 transition-all">
             <i class="fa-solid fa-calendar-plus text-base"></i>
             <span>Poptat termín v salonku</span>
@@ -987,6 +1047,39 @@
     </div>
   </section>
 
+  <!-- ==================== RECENZE ==================== -->
+  <section id="recenze" class="py-14 sm:py-20 bg-stone-900/40 border-b border-stone-800/60">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <span class="text-amber-400 text-xs font-bold tracking-widest uppercase block mb-1">Hodnocení hostů</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-100 mb-5">Co o nás říkají hosté</h2>
+        <div class="inline-flex items-center gap-3 px-5 py-3 rounded-2xl bg-stone-950/70 border border-stone-800 mb-8">
+          <span class="text-3xl font-extrabold text-stone-100">4,6</span>
+          <span class="flex flex-col items-start">
+            <span class="text-amber-400 text-sm tracking-wide" aria-label="4,6 z 5 hvězd">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+            </span>
+            <span class="text-xs text-stone-400">hodnocení na Googlu</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Citace recenzí – vyplní skript ze seznamu RECENZE (bez recenzí se neukáže) -->
+      <div id="recenzeSeznam" class="hidden grid grid-cols-1 md:grid-cols-3 gap-4 mb-10"></div>
+
+      <div class="text-center">
+        <p class="text-sm text-stone-400 max-w-xl mx-auto mb-5">
+          Byli jste u nás spokojeni? Budeme rádi za vaše hodnocení na Googlu – pomůže dalším hostům nás najít.
+        </p>
+        <a href="https://maps.google.com/?q=Hospoda+U+Šuláků+Pekařská+349/99+Opava" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-sm uppercase tracking-wider shadow-lg shadow-amber-500/20 active:scale-95 transition-all">
+          <i class="fa-brands fa-google"></i> Ohodnoťte nás na Googlu
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== REZERVAČNÍ FORMULÁŘ ==================== -->
   <section id="rezervace" class="py-16 sm:py-24 bg-stone-950 border-b border-stone-800/60">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
@@ -996,7 +1089,7 @@
           Rezervace stolu & salonku
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-stone-100 mb-2">
-          Online rezervace
+          Žádost o rezervaci
         </h2>
         <p class="text-sm text-stone-400">
           Vyplňte údaje níže a my vám rezervaci potvrdíme telefonicky nebo SMS. Shrnutí žádosti vám hned dorazí
@@ -1036,6 +1129,23 @@
                 <span class="text-xs font-semibold text-stone-200">Letní zahrádka</span>
               </label>
             </div>
+          </div>
+
+          <!-- Typ akce (ukáže se jen při výběru salonku) -->
+          <div id="resEventWrap" class="hidden">
+            <label for="resEvent" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1.5">
+              Typ akce v salonku
+            </label>
+            <select id="resEvent"
+              class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 focus:outline-none focus:border-amber-500 text-sm">
+              <option value="">Vyberte…</option>
+              <option>Narozeniny</option>
+              <option>Rodinná oslava</option>
+              <option>Křtiny</option>
+              <option>Firemní večírek</option>
+              <option>Smuteční hostina</option>
+              <option>Jiná akce</option>
+            </select>
           </div>
 
           <!-- Jméno a telefon -->
@@ -1237,6 +1347,18 @@
         </div>
 
         <div class="mt-6 pt-4 border-t border-stone-700/60">
+          <!-- Praktické informace -->
+          <div class="flex flex-wrap gap-2 mb-4 text-xs font-semibold text-stone-200">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-stone-900/70 border border-stone-700">
+              <i class="fa-solid fa-credit-card text-amber-400"></i>Platba kartou
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-stone-900/70 border border-stone-700">
+              <i class="fa-solid fa-dog text-amber-400"></i>Psi vítáni
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-stone-900/70 border border-stone-700">
+              <i class="fa-solid fa-square-parking text-amber-400"></i>Parkování v okolí
+            </span>
+          </div>
           <a href="https://maps.google.com/?q=Hospoda+U+Šuláků,+Pekařská+349/99,+Opava" target="_blank"
             rel="noopener noreferrer"
             class="block w-full py-2.5 px-4 text-center text-sm font-bold text-[#272522] bg-brand-gold hover:bg-amber-400 rounded-lg transition-colors shadow">
@@ -1314,13 +1436,22 @@
   <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4 backdrop-blur-sm"
     onclick="closeLightbox(event)">
     <div class="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center">
-      <button onclick="closeLightbox(null)"
+      <button onclick="closeLightbox(null)" aria-label="Zavřít"
         class="absolute -top-12 right-0 text-white hover:text-amber-400 text-3xl font-bold transition-colors">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <img id="lightboxImg" src="" alt="Zvětšená fotografie"
         class="max-h-[80vh] w-auto max-w-full rounded-2xl border border-stone-800 shadow-2xl object-contain">
       <p id="lightboxCaption" class="mt-3 text-stone-300 text-sm text-center font-medium"></p>
+      <p id="lightboxCounter" class="mt-1 text-stone-500 text-xs text-center"></p>
+      <button id="lbPrev" type="button" aria-label="Předchozí fotka" onclick="posunLightbox(-1, event)"
+        class="absolute left-2 lg:-left-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-stone-900/80 border border-stone-700 text-white hover:text-amber-400 flex items-center justify-center transition-colors">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button id="lbNext" type="button" aria-label="Další fotka" onclick="posunLightbox(1, event)"
+        class="absolute right-2 lg:-right-16 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-stone-900/80 border border-stone-700 text-white hover:text-amber-400 flex items-center justify-center transition-colors">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
     </div>
   </div>
 
@@ -1510,6 +1641,13 @@
         cap.textContent = caption || '';
         modal.classList.remove('hidden');
         modal.classList.add('flex');
+
+        // pořadí fotky v galerii (kvůli šipkám a počítadlu); leták z akcí v galerii není
+        const fotky = viditelneFotky();
+        lbIndex = fotky.findIndex(el => el.querySelector('img')?.getAttribute('src') === src);
+        const pocet = document.getElementById('lightboxCounter');
+        if (pocet) pocet.textContent = lbIndex >= 0 ? `${lbIndex + 1} / ${fotky.length}` : '';
+        ['lbPrev', 'lbNext'].forEach(id => document.getElementById(id)?.classList.toggle('hidden', lbIndex < 0));
       }
     }
 
@@ -1568,7 +1706,10 @@
       const date = document.getElementById('resDate').value;
       const time = document.getElementById('resTime').value;
       const guests = document.getElementById('resGuests').value;
-      const note = document.getElementById('resNote').value.trim() || 'Bez zvláštních požadavků';
+      // Typ akce (jen u salonku) se pošle v poznámce, takže ho e-mailové šablony ukážou beze změny
+      const typAkce = area === 'Soukromý salonek' ? (document.getElementById('resEvent')?.value || '') : '';
+      const poznamka = document.getElementById('resNote').value.trim();
+      const note = [typAkce && `Typ akce: ${typAkce}`, poznamka].filter(Boolean).join(' · ') || 'Bez zvláštních požadavků';
 
       if (submitBtn) submitBtn.disabled = true;
       if (submitBtnText) submitBtnText.textContent = 'Odesílám rezervaci...';
@@ -1642,6 +1783,113 @@
         }
       }
     }
+
+    // E. AKCE U NÁS – sem přidej akci a sekce „Akce u nás" se na webu ukáže sama (i odkaz „Akce" v menu).
+    //    Akce sama zmizí den po datu „do" (RRRR-MM-DD). Leták dej do složky img/, nejlépe zmenšený pod 300 kB.
+    //    Příklad:
+    //    { nazev: 'Makrela na grilu', kdy: 'Každý pátek od 17:00', popis: 'Makrela se salátkem a chlebem za 179 Kč.',
+    //      obrazek: 'img/makrela.jpg', do: '2026-12-31' },
+    const AKCE = [
+    ];
+
+    function zobrazAkce() {
+      const dnes = ymd(new Date());
+      const aktualni = AKCE.filter(a => !a.do || a.do >= dnes);
+      document.querySelectorAll('[data-akce-link]').forEach(el => el.classList.toggle('hidden', !aktualni.length));
+      const sekce = document.getElementById('akce');
+      const seznam = document.getElementById('akceSeznam');
+      if (!sekce || !seznam) return;
+      sekce.classList.toggle('hidden', !aktualni.length);
+      seznam.innerHTML = '';
+      aktualni.forEach(a => {
+        const karta = document.createElement('article');
+        karta.className = 'w-full sm:w-[21rem] rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 shadow-xl flex flex-col';
+        karta.innerHTML = `
+          ${a.obrazek ? `<button type="button" class="block w-full bg-stone-950" aria-label="Zvětšit leták">
+            <img src="${esc(a.obrazek)}" alt="${esc(a.nazev)}" loading="lazy" class="w-full aspect-[2/3] object-cover"></button>` : ''}
+          <div class="p-5 flex flex-col gap-2 flex-1">
+            ${a.kdy ? `<span class="self-start text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-red-600/15 border border-red-500/40 text-red-300">${esc(a.kdy)}</span>` : ''}
+            <h3 class="text-lg font-bold text-stone-100">${esc(a.nazev)}</h3>
+            ${a.popis ? `<p class="text-sm text-stone-400 leading-relaxed">${esc(a.popis)}</p>` : ''}
+            <a href="#rezervace" class="mt-auto pt-2 inline-flex items-center gap-2 text-sm font-bold text-amber-400 hover:text-amber-300">
+              Rezervovat stůl <i class="fa-solid fa-arrow-right text-xs"></i></a>
+          </div>`;
+        const btn = karta.querySelector('button');
+        if (btn) btn.addEventListener('click', () => openLightbox(a.obrazek, a.nazev));
+        seznam.appendChild(karta);
+      });
+    }
+
+    // F. RECENZE – sem vlož 2–3 skutečné recenze z Googlu (text + jméno autora), ukážou se samy.
+    //    Příklad: { text: 'Výborné pivo a milá obsluha.', jmeno: 'Jana K.', hvezdy: 5 },
+    const RECENZE = [
+    ];
+
+    function zobrazRecenze() {
+      const seznam = document.getElementById('recenzeSeznam');
+      if (!seznam || !RECENZE.length) return;
+      seznam.classList.remove('hidden');
+      seznam.innerHTML = '';
+      RECENZE.forEach(r => {
+        const k = document.createElement('figure');
+        k.className = 'p-5 rounded-2xl bg-stone-950/70 border border-stone-800 flex flex-col gap-3';
+        const hvezdy = Math.max(0, Math.min(5, r.hvezdy || 5));
+        k.innerHTML = `<div class="text-amber-400 text-xs">${'<i class="fa-solid fa-star"></i>'.repeat(hvezdy)}</div>
+          <blockquote class="text-sm text-stone-200 leading-relaxed">„${esc(r.text)}“</blockquote>
+          <figcaption class="mt-auto text-xs font-semibold text-stone-400">${esc(r.jmeno)} · Google</figcaption>`;
+        seznam.appendChild(k);
+      });
+    }
+
+    // G. Galerie: listování ve zvětšené fotce (šipky na obrazovce, klávesy ← → Esc, posun prstem)
+    let lbIndex = -1;
+    function viditelneFotky() {
+      return [...document.querySelectorAll('.gallery-item')].filter(el => !el.classList.contains('hidden'));
+    }
+    function posunLightbox(smer, e) {
+      if (e) e.stopPropagation();
+      const fotky = viditelneFotky();
+      if (lbIndex < 0 || !fotky.length) return;
+      fotky[(lbIndex + smer + fotky.length) % fotky.length].click();
+    }
+
+    // H. Salonek: pole „Typ akce" jen při výběru salonku
+    function aktualizujTypAkce() {
+      const salonek = document.querySelector('input[name="resArea"][value="Soukromý salonek"]');
+      const wrap = document.getElementById('resEventWrap');
+      if (salonek && wrap) wrap.classList.toggle('hidden', !salonek.checked);
+    }
+    function vyberSalonek() {
+      const salonek = document.querySelector('input[name="resArea"][value="Soukromý salonek"]');
+      if (salonek) {
+        salonek.checked = true;
+        aktualizujTypAkce();
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      zobrazAkce();
+      zobrazRecenze();
+
+      document.querySelectorAll('input[name="resArea"]').forEach(r => r.addEventListener('change', aktualizujTypAkce));
+      aktualizujTypAkce();
+
+      const lb = document.getElementById('lightboxModal');
+      document.addEventListener('keydown', e => {
+        if (!lb || lb.classList.contains('hidden')) return;
+        if (e.key === 'Escape') closeLightbox(null);
+        if (e.key === 'ArrowLeft') posunLightbox(-1);
+        if (e.key === 'ArrowRight') posunLightbox(1);
+      });
+      let startX = null;
+      lb?.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      lb?.addEventListener('touchend', e => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        startX = null;
+        if (Math.abs(dx) > 50) posunLightbox(dx < 0 ? 1 : -1);
+      });
+    });
 
     // 7. Okno „Žádost byla odeslána" po odeslání rezervace.
     //    Okno je v HTML až pod tímto skriptem, proto se prvky hledají až při použití / po načtení stránky.
