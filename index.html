@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html lang="cs" class="scroll-smooth">
+<html lang="cs" class="scroll-smooth scroll-pt-24">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="logo.png">
   <title>Hospoda U Šuláků</title>
   <meta name="description"
     content="Tradiční poctivá česká hospoda U Šuláků v Opavě-Kateřinkách. Tanková Plzeň, Radegast, bramborákové speciality, salonek na oslavy a letní zahrádka.">
@@ -49,12 +48,19 @@
     body {
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
     }
+
+    /* Ceny v lístku se nesmí lepit na text a lámat do dvou řádků */
+    .menu-card .justify-between> :last-child {
+      flex-shrink: 0;
+      white-space: nowrap;
+      margin-left: .75rem;
+    }
   </style>
 
-  <link rel="icon" type="image/png" href="img/logo.png">
+  <link rel="icon" type="image/png" href="img/favicon-192.png">
 </head>
 
-<body class="bg-stone-950 text-stone-200 antialiased selection:bg-amber-500 selection:text-black">
+<body class="bg-stone-950 text-stone-200 antialiased selection:bg-amber-500 selection:text-black pb-16 md:pb-0">
 
   <!-- ==================== HORNÍ NAVIGACE ==================== -->
   <header class="sticky top-0 z-50 bg-stone-950/95 backdrop-blur-md border-b border-stone-800/80 shadow-2xl">
@@ -62,7 +68,7 @@
 
       <!-- Logo a název -->
       <a href="#" class="flex items-center gap-3 group">
-        <img src="img/logo.png" alt="Hospoda U Šuláků Logo"
+        <img src="img/logo-512.webp" alt="Hospoda U Šuláků Logo"
           class="w-12 h-12 rounded-full border-2 border-amber-500/70 p-0.5 bg-stone-900 object-cover shadow-md group-hover:scale-105 transition-transform"
           onerror="this.onerror=null; this.src='https://placehold.co/100x100/1c1713/f3a738?text=U+Šuláků'">
         <div>
@@ -85,27 +91,59 @@
       <div class="flex items-center gap-2 sm:gap-3">
         <a href="https://www.facebook.com/hospoda.u.sulaku.2025?locale=cs_CZ" target="_blank" rel="noopener noreferrer"
           title="Facebook Hospody U Šuláků"
-          class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 hover:border-blue-500 hover:text-blue-400 text-stone-300 flex items-center justify-center transition-colors text-sm">
+          class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 hover:border-blue-500 hover:text-blue-400 text-stone-300 hidden sm:flex items-center justify-center transition-colors text-sm">
           <i class="fa-brands fa-facebook-f"></i>
         </a>
         <a href="https://www.instagram.com/u_sulaku/" target="_blank" rel="noopener noreferrer"
           title="Instagram Hospody U Šuláků"
-          class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 hover:border-pink-500 hover:text-pink-400 text-stone-300 flex items-center justify-center transition-colors text-sm">
+          class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 hover:border-pink-500 hover:text-pink-400 text-stone-300 hidden sm:flex items-center justify-center transition-colors text-sm">
           <i class="fa-brands fa-instagram"></i>
         </a>
         <a href="#rezervace"
-          class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 active:scale-95 transition-all flex items-center gap-1.5">
+          class="px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs uppercase tracking-wider shadow-lg shadow-amber-500/20 active:scale-95 transition-all hidden sm:flex items-center gap-1.5">
           <i class="fa-solid fa-calendar-check text-xs"></i>
           <span>Rezervovat</span>
         </a>
+        <!-- Tlačítko mobilního menu -->
+        <button type="button" id="mobileMenuBtn" aria-label="Otevřít menu" aria-expanded="false"
+          aria-controls="mobileNav"
+          class="md:hidden w-10 h-10 rounded-xl bg-stone-900 border border-stone-700 text-stone-200 flex items-center justify-center text-lg active:scale-95 transition-all">
+          <i class="fa-solid fa-bars" id="mobileMenuIcon"></i>
+        </button>
       </div>
 
     </div>
+
+    <!-- Mobilní menu (rozbalí se tlačítkem ☰) -->
+    <nav id="mobileNav" class="hidden md:hidden border-t border-stone-800/80">
+      <div class="px-4 py-2 flex flex-col text-sm font-semibold uppercase tracking-wider text-stone-200">
+        <a href="#nabidka" class="py-3.5 border-b border-stone-800/60">Jídelní & Nápojový lístek</a>
+        <a href="#galerie" class="py-3.5 border-b border-stone-800/60">Fotogalerie</a>
+        <a href="#salonek" class="py-3.5 border-b border-stone-800/60 text-amber-400">Salonek & Oslavy</a>
+        <a href="#rezervace" class="py-3.5 border-b border-stone-800/60">Rezervace</a>
+        <a href="#kontakt" class="py-3.5 border-b border-stone-800/60">Kde nás najdete</a>
+        <div class="grid grid-cols-2 gap-3 py-4 normal-case tracking-normal">
+          <a href="https://www.facebook.com/hospoda.u.sulaku.2025?locale=cs_CZ" target="_blank" rel="noopener noreferrer"
+            class="py-2.5 rounded-xl bg-stone-900 border border-stone-700 text-center">
+            <i class="fa-brands fa-facebook-f mr-2 text-blue-400"></i>Facebook
+          </a>
+          <a href="https://www.instagram.com/u_sulaku/" target="_blank" rel="noopener noreferrer"
+            class="py-2.5 rounded-xl bg-stone-900 border border-stone-700 text-center">
+            <i class="fa-brands fa-instagram mr-2 text-pink-400"></i>Instagram
+          </a>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <!-- ==================== HERO SEKCIE ==================== -->
-  <section
-    class="relative py-16 sm:py-24 bg-gradient-to-b from-stone-950 via-stone-900 to-stone-950 border-b border-stone-800/60 overflow-hidden">
+  <section class="relative py-14 sm:py-24 border-b border-stone-800/60 overflow-hidden">
+    <!-- Fotka hlavního sálu na pozadí + ztmavení, aby byl text čitelný -->
+    <img src="img/interier-klenba.jpg" alt="" aria-hidden="true" fetchpriority="high"
+      class="absolute inset-0 w-full h-full object-cover pointer-events-none">
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-stone-950/90 via-stone-950/75 to-stone-950 pointer-events-none">
+    </div>
     <!-- Světelný podkres -->
     <div
       class="absolute -top-32 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none">
@@ -117,8 +155,8 @@
       <div class="inline-block mb-6 relative">
         <div class="absolute -inset-2 bg-gradient-to-r from-amber-500 to-yellow-600 rounded-full blur-md opacity-40">
         </div>
-        <img src="img/logo.png" alt="Hospoda U Šuláků pečeť"
-          class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full border-4 border-amber-500/80 p-1 bg-stone-900 object-cover shadow-2xl mx-auto hover:scale-105 transition-transform duration-300"
+        <img src="img/logo-512.webp" alt="Hospoda U Šuláků pečeť"
+          class="relative w-28 h-28 sm:w-40 sm:h-40 rounded-full border-4 border-amber-500/80 p-1 bg-stone-900 object-cover shadow-2xl mx-auto hover:scale-105 transition-transform duration-300"
           onerror="this.onerror=null; this.src='https://placehold.co/200x200/1c1713/f3a738?text=U+Šuláků+Opava'">
       </div>
 
@@ -133,10 +171,19 @@
           Šuláků</span>
       </h1>
 
-      <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto font-normal leading-relaxed mb-8">
+      <p class="text-base sm:text-lg text-stone-300 max-w-2xl mx-auto font-normal leading-relaxed mb-6">
         Hospoda s pravou atmosférou v Opavě-Kateřinkách. Dokonalá hladinka Pilsner Urquell, hořký Radegast, vyhlášené
         bramboráky, domácí limonády a útulný podkrovní salonek pro vaše rodinné i firemní oslavy.
       </p>
+
+      <!-- Stav „Teď otevřeno / zavřeno" (vyplní skript podle otevírací doby) -->
+      <div class="mb-7">
+        <a href="#kontakt" id="openStatusPill"
+          class="hidden items-center gap-2 px-4 py-2 rounded-full bg-stone-950/70 border border-stone-700 text-sm font-semibold text-stone-100 hover:border-amber-500/60 transition-colors">
+          <span id="openStatusDot" class="w-2.5 h-2.5 rounded-full"></span>
+          <span data-open-status></span>
+        </a>
+      </div>
 
       <!-- Tlačítka Hero -->
       <div class="flex flex-wrap items-center justify-center gap-3.5 sm:gap-4 mb-8">
@@ -695,7 +742,7 @@
           data-category="interier"
           onclick="openLightbox('img/interier-klenba.jpg', 'Hlavní sál s cihlovými klenbami a posezením')">
           <img src="img/interier-klenba.jpg" alt="Hlavní sál U Šuláků"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Interiér & Sál</span>
@@ -708,7 +755,7 @@
           class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="interier" onclick="openLightbox('img/interier-bar.jpg', 'Cihlové klenby a průhled k baru')">
           <img src="img/interier-bar.jpg" alt="Cihlové klenby"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Interiér</span>
@@ -722,7 +769,7 @@
           data-category="interier"
           onclick="openLightbox('img/interier-tv.jpg', 'Posezení u velké TV pro sportovní přenosy')">
           <img src="img/interier-tv.jpg" alt="Sál s televizí"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Sportovní přenosy</span>
@@ -736,7 +783,7 @@
           data-category="interier"
           onclick="openLightbox('img/vstup-schodiste.jpg', 'Vstupní hala se schodištěm do salonku')">
           <img src="img/vstup-schodiste.jpg" alt="Vstupní schodiště"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Vstupní hala</span>
@@ -750,7 +797,7 @@
           data-category="zahradka"
           onclick="openLightbox('img/zahradka-slunecniky.jpg', 'Slunečná letní zahrádka pod slunečníky Pilsner Urquell')">
           <img src="img/zahradka-slunecniky.jpg" alt="Denní zahrádka"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Letní zahrádka</span>
@@ -764,7 +811,7 @@
           data-category="zahradka"
           onclick="openLightbox('img/zahradka-vecer.jpg', 'Kouzelná večerní atmosféra na zahrádce se světýlky')">
           <img src="img/zahradka-vecer.jpg" alt="Večerní zahrádka"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Večerní posezení</span>
@@ -777,7 +824,7 @@
           class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="zahradka" onclick="openLightbox('img/zahradka-noc.jpg', 'Noční atmosféra na dvoře U Šuláků')">
           <img src="img/zahradka-noc.jpg" alt="Noční zahrádka"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Zahrádka v noci</span>
@@ -790,7 +837,7 @@
           class="gallery-item group relative h-64 rounded-2xl overflow-hidden bg-stone-900 border border-stone-800 cursor-pointer shadow-lg"
           data-category="zahradka" onclick="openLightbox('img/zahradka-slunce.jpg', 'Letní zahrádka zalitá sluncem')">
           <img src="img/zahradka-slunce.jpg" alt="Zahrádka slunce"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Letní pohoda</span>
@@ -804,7 +851,7 @@
           data-category="salonek"
           onclick="openLightbox('img/salonek-oslava.jpg', 'Slavnostní tabule v salonku s kouzelnou světelnou stěnou')">
           <img src="img/salonek-oslava.jpg" alt="Slavnostní salonek"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Salonek & Oslavy</span>
@@ -818,7 +865,7 @@
           data-category="salonek"
           onclick="openLightbox('img/salonek-tabule.jpg', 'Podkrovní salonek připravený pro hostinu')">
           <img src="img/salonek-tabule.jpg" alt="Podkrovní tabule"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Soukromé akce</span>
@@ -832,7 +879,7 @@
           data-category="pivo"
           onclick="openLightbox('img/pivo-hladinka.jpg', 'Dokonalá hladinka Pilsner Urquell načepovaná s láskou')">
           <img src="img/pivo-hladinka.jpg" alt="Čerstvá hladinka piva"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Pivo s pěnou jako křen</span>
@@ -846,7 +893,7 @@
           data-category="pivo"
           onclick="openLightbox('img/zastera-pilsner.jpg', 'Stylová kožená výčepní zástěra Pilsner Urquell')">
           <img src="img/zastera-pilsner.jpg" alt="Kožená zástěra Pilsner Urquell"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Pivní tradice</span>
@@ -860,7 +907,7 @@
           data-category="pivo"
           onclick="openLightbox('img/lustr-pullitr.jpg', 'Stylový lustr vyrobený z originálního pivního půllitru')">
           <img src="img/lustr-pullitr.jpg" alt="Pivní lampa"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+            loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
           <div
             class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end">
             <span class="text-xs font-bold text-amber-400">Hospodský detail</span>
@@ -924,15 +971,15 @@
         <div class="grid grid-cols-2 gap-4">
           <div class="space-y-4">
             <img src="img/salonek-oslava.jpg" alt="Slavnostní tabule v salonku"
-              class="w-full h-56 object-cover rounded-2xl border border-stone-800 shadow-xl">
+              loading="lazy" class="w-full h-56 object-cover rounded-2xl border border-stone-800 shadow-xl">
             <img src="img/salonek-vyzdoba.jpg" alt="Výzdoba stolu salonek"
-              class="w-full h-44 object-cover rounded-2xl border border-stone-800 shadow-xl">
+              loading="lazy" class="w-full h-44 object-cover rounded-2xl border border-stone-800 shadow-xl">
           </div>
           <div class="space-y-4 pt-6">
             <img src="img/salonek-stena.jpg" alt="Světelná stěna a stoly"
-              class="w-full h-44 object-cover rounded-2xl border border-stone-800 shadow-xl">
+              loading="lazy" class="w-full h-44 object-cover rounded-2xl border border-stone-800 shadow-xl">
             <img src="img/salonek-tabule.jpg" alt="Podkrovní tabule salonek"
-              class="w-full h-56 object-cover rounded-2xl border border-stone-800 shadow-xl">
+              loading="lazy" class="w-full h-56 object-cover rounded-2xl border border-stone-800 shadow-xl">
           </div>
         </div>
 
@@ -952,7 +999,8 @@
           Online rezervace
         </h2>
         <p class="text-sm text-stone-400">
-          Vyplňte údaje níže. Automatické potvrzení dorazí okamžitě na váš e-mail a nám do schránky v hospodě.
+          Vyplňte údaje níže a my vám rezervaci potvrdíme telefonicky nebo SMS. Shrnutí žádosti vám hned dorazí
+          na e-mail.
         </p>
       </div>
 
@@ -969,7 +1017,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <label
                 class="flex items-center gap-3 p-3.5 rounded-xl bg-stone-950/80 border border-stone-800 hover:border-amber-500/60 cursor-pointer transition-colors">
-                <input type="radio" name="resArea" value="Hlavní sál"
+                <input type="radio" name="resArea" value="Hlavní sál" required
                   class="w-4 h-4 text-amber-500 focus:ring-amber-500 bg-stone-900 border-stone-700">
                 <span class="text-xs font-semibold text-stone-200">Hlavní sál</span>
               </label>
@@ -1012,12 +1060,12 @@
           <!-- E-mail hosta -->
           <div>
             <label for="resEmail" class="block text-xs font-bold uppercase tracking-wider text-stone-300 mb-1.5">
-              Váš E-mail (pro doručení potvrzení rezervace) *
+              Váš E-mail (pošleme vám shrnutí žádosti) *
             </label>
             <input type="email" id="resEmail" required placeholder="jan.novak@email.cz"
               class="w-full px-4 py-2.5 rounded-xl bg-stone-950 border border-stone-800 text-stone-100 placeholder-stone-500 focus:outline-none focus:border-amber-500 text-sm">
-            <span class="block text-[11px] text-stone-400 mt-1">Na tuto adresu vám ihned dorazí automatické potvrzení s
-              podrobnostmi rezervace.</span>
+            <span class="block text-[11px] text-stone-400 mt-1">Na tuto adresu vám hned dorazí shrnutí žádosti. Rezervace
+              platí až po potvrzení obsluhou.</span>
           </div>
 
           <!-- Datum, Čas, Hosté -->
@@ -1098,11 +1146,11 @@
           <div class="flex items-start gap-3">
             <i class="fa-solid fa-circle-check text-2xl text-emerald-400 mt-0.5"></i>
             <div class="space-y-2 w-full">
-              <h4 class="font-bold text-base text-white">Rezervace byla úspěšně odeslána!</h4>
+              <h4 class="font-bold text-base text-white">Žádost o rezervaci byla odeslána!</h4>
               <p class="text-xs text-emerald-200/90 leading-relaxed" id="successDetailsText"></p>
 
               <div class="pt-3 border-t border-emerald-800/60 flex flex-wrap items-center gap-3">
-                <span class="text-xs text-emerald-300">✉️ Potvrzovací e-mail byl odeslán na vaši adresu i personálu
+                <span class="text-xs text-emerald-300">✉️ Shrnutí žádosti jsme poslali na váš e-mail i obsluze
                   hospody.</span>
                 <a id="whatsappShareBtn" href="#" target="_blank" rel="noopener noreferrer"
                   class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-emerald-700 hover:bg-emerald-600 text-white font-semibold text-xs transition-colors shadow">
@@ -1162,22 +1210,24 @@
             </div>
 
             <div class="pt-3 border-t border-stone-700/60">
-              <span class="block text-xs font-semibold uppercase tracking-wider text-stone-400 mb-2">Otevírací
-                doba</span>
+              <div class="flex items-center justify-between gap-3 mb-2">
+                <span class="block text-xs font-semibold uppercase tracking-wider text-stone-400">Otevírací doba</span>
+                <span id="openStatusKontakt" data-open-status class="text-xs font-semibold text-right"></span>
+              </div>
               <div class="space-y-1.5 text-stone-200">
-                <div class="flex justify-between">
+                <div class="flex justify-between rounded-md px-2 -mx-2 py-0.5" data-days="1">
                   <span>Pondělí</span>
                   <span class="font-semibold text-white">15:00 – 21:00</span>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between rounded-md px-2 -mx-2 py-0.5" data-days="2,3,4">
                   <span>Úterý – Čtvrtek</span>
                   <span class="font-semibold text-brand-gold">15:00 – 22:00</span>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between rounded-md px-2 -mx-2 py-0.5" data-days="5,6">
                   <span>Pátek – Sobota</span>
                   <span class="font-semibold text-brand-gold">15:00 – 23:00</span>
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between rounded-md px-2 -mx-2 py-0.5" data-days="0">
                   <span>Neděle</span>
                   <span class="font-semibold text-white">Zavřeno</span>
                 </div>
@@ -1212,7 +1262,7 @@
       class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-6">
 
       <div class="flex items-center gap-3">
-        <img src="img/logo.png" alt="U Šuláků pečeť"
+        <img src="img/logo-512.webp" alt="U Šuláků pečeť"
           class="w-10 h-10 rounded-full border border-amber-500/50 bg-stone-900 object-cover"
           onerror="this.onerror=null; this.src='https://placehold.co/100x100/1c1713/f3a738?text=U+Šuláků'">
         <div>
@@ -1224,15 +1274,15 @@
 
       <div class="flex items-center gap-3">
         <a href="https://www.facebook.com/hospoda.u.sulaku.2025?locale=cs_CZ" target="_blank" rel="noopener noreferrer"
-          class="hover:text-blue-400 transition-colors p-2">
+          aria-label="Facebook" class="hover:text-blue-400 transition-colors p-2">
           <i class="fa-brands fa-facebook-f text-base"></i>
         </a>
-        <a href="https://www.instagram.com/tenisovyklubopava/" target="_blank" rel="noopener noreferrer"
-          class="hover:text-pink-400 transition-colors p-2">
+        <a href="https://www.instagram.com/u_sulaku/" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram" class="hover:text-pink-400 transition-colors p-2">
           <i class="fa-brands fa-instagram text-base"></i>
         </a>
         <a href="https://maps.google.com/?q=Hospoda+U+Šuláků+Pekařská+349/99+Opava" target="_blank"
-          rel="noopener noreferrer" class="hover:text-amber-400 transition-colors p-2">
+          rel="noopener noreferrer" aria-label="Mapa" class="hover:text-amber-400 transition-colors p-2">
           <i class="fa-solid fa-location-dot text-base"></i>
         </a>
       </div>
@@ -1243,6 +1293,22 @@
 
     </div>
   </footer>
+
+  <!-- ==================== SPODNÍ LIŠTA NA MOBILU ==================== -->
+  <div
+    class="md:hidden fixed bottom-0 inset-x-0 z-40 grid grid-cols-3 bg-stone-950/95 backdrop-blur-md border-t border-stone-800 text-[11px] font-bold uppercase tracking-wider">
+    <a href="tel:+420777743750" class="py-2.5 flex flex-col items-center gap-1 text-stone-200 active:bg-stone-800">
+      <i class="fa-solid fa-phone text-base text-amber-400"></i>Zavolat
+    </a>
+    <a href="https://maps.google.com/?q=Hospoda+U+Šuláků+Pekařská+349/99+Opava" target="_blank"
+      rel="noopener noreferrer"
+      class="py-2.5 flex flex-col items-center gap-1 text-stone-200 border-x border-stone-800 active:bg-stone-800">
+      <i class="fa-solid fa-location-dot text-base text-amber-400"></i>Navigovat
+    </a>
+    <a href="#rezervace" class="py-2.5 flex flex-col items-center gap-1 bg-amber-500 text-stone-950 active:bg-amber-400">
+      <i class="fa-solid fa-calendar-check text-base"></i>Rezervace
+    </a>
+  </div>
 
   <!-- ==================== LIGHTBOX MODAL (ZVĚTŠENÍ FOTEK) ==================== -->
   <div id="lightboxModal" class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4 backdrop-blur-sm"
@@ -1260,13 +1326,126 @@
 
   <!-- ==================== JAVASCRIPT OBSLUHA & EMAILJS ==================== -->
   <script>
-    // 1. Nastavení výchozího data (dnes)
+    // A. OTEVÍRACÍ DOBA – odsud ji bere skript (stav „Teď otevřeno" i rezervační formulář).
+    //    Klíč = den v týdnu (0 = neděle, 1 = pondělí … 6 = sobota), hodnota = [otevíráme, zavíráme].
+    //    Den, který tu chybí, máme zavřeno. Při změně uprav i tabulku v sekci „Kde nás najdete".
+    const OTEVIRACI_DOBA = {
+      1: [15, 21],                             // pondělí
+      2: [15, 22], 3: [15, 22], 4: [15, 22],   // úterý – čtvrtek
+      5: [15, 23], 6: [15, 23]                 // pátek – sobota
+    };
+    const NAZVY_DNU = ['v neděli', 'v pondělí', 'v úterý', 've středu', 've čtvrtek', 'v pátek', 'v sobotu'];
+    const REZERVACE_PREDEM_DNU = 2; // online rezervace minimálně 48 hodin předem
+
+    // Ochrana textu od hosta před vložením do HTML
+    function esc(s) {
+      return String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    // Aktuální den a čas v Opavě (i když web otevře někdo v jiném časovém pásmu)
+    function casVOpave() {
+      const parts = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Europe/Prague', weekday: 'short', hour: '2-digit', minute: '2-digit', hour12: false
+      }).formatToParts(new Date());
+      const get = t => parts.find(p => p.type === t).value;
+      const den = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(get('weekday'));
+      return { den, minuty: (parseInt(get('hour'), 10) % 24) * 60 + parseInt(get('minute'), 10) };
+    }
+
+    // B. Stav „Teď otevřeno / zavřeno" + zvýraznění dnešního dne v otevírací době
+    function stavOtevreni() {
+      const { den, minuty } = casVOpave();
+      const dnes = OTEVIRACI_DOBA[den];
+      if (dnes && minuty >= dnes[0] * 60 && minuty < dnes[1] * 60) {
+        return { otevreno: true, text: `Teď otevřeno do ${dnes[1]}:00` };
+      }
+      if (dnes && minuty < dnes[0] * 60) {
+        return { otevreno: false, text: `Teď zavřeno · otevíráme dnes v ${dnes[0]}:00` };
+      }
+      for (let i = 1; i <= 7; i++) {
+        const d = (den + i) % 7;
+        if (OTEVIRACI_DOBA[d]) {
+          return { otevreno: false, text: `Teď zavřeno · otevíráme ${i === 1 ? 'zítra' : NAZVY_DNU[d]} v ${OTEVIRACI_DOBA[d][0]}:00` };
+        }
+      }
+      return { otevreno: false, text: 'Teď zavřeno' };
+    }
+
+    function zobrazStavOtevreni() {
+      const stav = stavOtevreni();
+      document.querySelectorAll('[data-open-status]').forEach(el => { el.textContent = stav.text; });
+
+      const kontakt = document.getElementById('openStatusKontakt');
+      if (kontakt) kontakt.className = 'text-xs font-semibold text-right ' + (stav.otevreno ? 'text-emerald-400' : 'text-rose-400');
+      const dot = document.getElementById('openStatusDot');
+      if (dot) dot.className = 'w-2.5 h-2.5 rounded-full ' + (stav.otevreno ? 'bg-emerald-400 animate-pulse' : 'bg-rose-500');
+      const pill = document.getElementById('openStatusPill');
+      if (pill) { pill.classList.remove('hidden'); pill.classList.add('inline-flex'); }
+
+      const { den } = casVOpave();
+      document.querySelectorAll('[data-days]').forEach(row => {
+        const jeDnes = row.dataset.days.split(',').map(Number).includes(den);
+        row.classList.toggle('bg-amber-500/10', jeDnes);
+        row.classList.toggle('font-bold', jeDnes);
+      });
+    }
+
+    // C. Rezervace: nejdřív za 48 hodin, ne v zavřené dny, ne v čas zavírání
+    function ymd(d) {
+      return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    }
+
+    function zkontrolujDatumRezervace() {
+      const dateInput = document.getElementById('resDate');
+      const timeSelect = document.getElementById('resTime');
+      if (!dateInput || !timeSelect) return;
+      const doba = dateInput.value ? OTEVIRACI_DOBA[new Date(dateInput.value + 'T12:00').getDay()] : null;
+
+      if (dateInput.value && !doba) {
+        dateInput.setCustomValidity('V tento den máme zavřeno. Vyberte prosím jiný den.');
+        dateInput.reportValidity();
+      } else {
+        dateInput.setCustomValidity('');
+      }
+
+      // Časy od zavírací hodiny vypnout (např. v pondělí 21:00)
+      [...timeSelect.options].forEach(o => {
+        o.disabled = !!doba && parseInt(o.value, 10) >= doba[1];
+      });
+      if (timeSelect.selectedOptions[0]?.disabled) {
+        const povolene = [...timeSelect.options].filter(o => !o.disabled);
+        if (povolene.length) timeSelect.value = povolene[povolene.length - 1].value;
+      }
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
+      zobrazStavOtevreni();
+      setInterval(zobrazStavOtevreni, 60 * 1000);
+
       const dateInput = document.getElementById('resDate');
       if (dateInput) {
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.value = today;
-        dateInput.min = today;
+        const prvni = new Date();
+        prvni.setDate(prvni.getDate() + REZERVACE_PREDEM_DNU);
+        dateInput.min = ymd(prvni);
+        while (!OTEVIRACI_DOBA[prvni.getDay()]) prvni.setDate(prvni.getDate() + 1);
+        dateInput.value = ymd(prvni);
+        dateInput.addEventListener('change', zkontrolujDatumRezervace);
+        zkontrolujDatumRezervace();
+      }
+
+      // D. Mobilní menu (tlačítko ☰ v hlavičce)
+      const menuBtn = document.getElementById('mobileMenuBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      const menuIcon = document.getElementById('mobileMenuIcon');
+      if (menuBtn && mobileNav && menuIcon) {
+        const nastavMenu = (otevrit) => {
+          mobileNav.classList.toggle('hidden', !otevrit);
+          menuBtn.setAttribute('aria-expanded', String(otevrit));
+          menuBtn.setAttribute('aria-label', otevrit ? 'Zavřít menu' : 'Otevřít menu');
+          menuIcon.className = otevrit ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        };
+        menuBtn.addEventListener('click', () => nastavMenu(mobileNav.classList.contains('hidden')));
+        mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nastavMenu(false)));
       }
     });
 
@@ -1433,14 +1612,16 @@
         const resHost = await emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateHost, templateParams);
         console.log("Email hostovi:", resHost);
 
-        // Úspěch
+        // Úspěch – žádost odešla, ale rezervace ještě není potvrzená obsluhou
+        const datumCZ = date.split('-').reverse().map(Number).join('. ');
         if (successText) {
-          successText.innerHTML = `Děkujeme, <strong>${name}</strong>. Rezervace na <strong>${date} v ${time}</strong> (${guests}, ${area}) byla zaznamenána. Potvrzení bylo odesláno na <strong>${email}</strong>.`;
+          successText.innerHTML = `Děkujeme, <strong>${esc(name)}</strong>. Vaši žádost o rezervaci na <strong>${datumCZ} v ${time}</strong> (${esc(guests)}, ${esc(area)}) jsme přijali. <strong>Rezervace platí až po potvrzení obsluhou</strong> – ozveme se vám telefonicky nebo SMS. Shrnutí jsme poslali na <strong>${esc(email)}</strong>.`;
         }
         if (successBox) successBox.classList.remove('hidden');
+        openReservationModal();
 
         if (submitBtn && submitBtnText && submitBtnIcon) {
-          submitBtnText.textContent = 'Rezervace odeslána ✓';
+          submitBtnText.textContent = 'Žádost odeslána ✓';
           submitBtnIcon.className = 'fa-solid fa-circle-check';
           submitBtn.classList.replace('bg-amber-500', 'bg-emerald-600');
         }
@@ -1450,7 +1631,7 @@
         const errMsg = err?.text || err?.message || JSON.stringify(err);
 
         if (errorText) {
-          errorText.innerHTML = `Chyba EmailJS: <strong>${errMsg}</strong>.<br>Můžete rezervaci odeslat přímo na WhatsApp nebo nám zavolat.`;
+          errorText.innerHTML = `Chyba EmailJS: <strong>${esc(errMsg)}</strong>.<br>Můžete rezervaci odeslat přímo na WhatsApp nebo nám zavolat.`;
         }
         if (errorBox) errorBox.classList.remove('hidden');
 
@@ -1462,43 +1643,35 @@
       }
     }
 
-    // 7. Zavření modálního okna po odeslání rezervace
+    // 7. Okno „Žádost byla odeslána" po odeslání rezervace.
+    //    Okno je v HTML až pod tímto skriptem, proto se prvky hledají až při použití / po načtení stránky.
+    function openReservationModal() {
       const resModal = document.getElementById('reservationModal');
-  const closeModalBtn = document.getElementById('closeModalBtn');
-  const resForm = document.getElementById('reservationForm'); // upravte ID dle vašeho formuláře
-
-  // Funkce pro otevření okna
-  function openReservationModal() {
-    resModal.classList.remove('hidden');
-    resModal.classList.add('flex');
-  }
-
-  // Funkce pro zavření okna
-  function closeReservationModal() {
-    resModal.classList.add('hidden');
-    resModal.classList.remove('flex');
-  }
-
-  closeModalBtn.addEventListener('click', closeReservationModal);
-
-  // Zavření kliknutím mimo box
-  resModal.addEventListener('click', (e) => {
-    if (e.target === resModal) {
-      closeReservationModal();
+      if (resModal) {
+        resModal.classList.remove('hidden');
+        resModal.classList.add('flex');
+      }
     }
-  });
 
-  // Příklad napojení na odeslání formuláře (EmailJS success callback)
-  if (resForm) {
-    resForm.addEventListener('submit', function(e) {
-      // Pokud používáte EmailJS, voláte openReservationModal() uvnitř .then()
-      // Ukázka:
-      // emailjs.sendForm(...).then(() => {
-      //   openReservationModal();
-      //   resForm.reset();
-      // });
+    function closeReservationModal() {
+      const resModal = document.getElementById('reservationModal');
+      if (resModal) {
+        resModal.classList.add('hidden');
+        resModal.classList.remove('flex');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const resModal = document.getElementById('reservationModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      if (closeModalBtn) closeModalBtn.addEventListener('click', closeReservationModal);
+      // Zavření kliknutím mimo box
+      if (resModal) {
+        resModal.addEventListener('click', (e) => {
+          if (e.target === resModal) closeReservationModal();
+        });
+      }
     });
-  }
   </script>
 
 <!-- Modální okno po odeslání rezervace -->
