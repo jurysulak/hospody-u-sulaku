@@ -98,7 +98,7 @@
         <tr><th>Služba</th><th>K čemu</th><th>Jaké údaje</th></tr>
         <tr><td>EmailJS (emailjs.com)</td><td>odeslání rezervace z formuláře do naší e-mailové schránky a shrnutí vám</td><td>všechny údaje z formuláře</td></tr>
         <tr><td>Seznam.cz, a.s. (naše e-mailová schránka)</td><td>uložení přijatých rezervací</td><td>všechny údaje z formuláře</td></tr>
-        <tr><td>Vercel Inc. (USA)</td><td>hosting – „server“, na kterém web běží</td><td>technické údaje o návštěvě (IP adresa, prohlížeč, čas)</td></tr>
+        <tr><td>Vercel Inc. (USA)</td><td>hosting – „server“, na kterém web běží, a statistika návštěvnosti</td><td>technické údaje o návštěvě (IP adresa, prohlížeč, čas); anonymní statistika návštěvnosti</td></tr>
         <tr><td>Cloudflare (cdnjs), jsDelivr, Tailwind CSS</td><td>doručení ikon a knihoven, aby web správně vypadal a fungoval</td><td>IP adresa a údaje o prohlížeči</td></tr>
       </table>
     </div>
@@ -116,6 +116,11 @@
     <p>Při každé návštěvě webu se automaticky přenáší vaše IP adresa a údaje o prohlížeči. Bez toho by se stránka
       nezobrazila. Hosting (Vercel) tyto záznamy krátce uchovává kvůli bezpečnosti a odhalení útoků. Právním důvodem je
       náš oprávněný zájem na bezpečném provozu webu (čl. 6 odst. 1 písm. f) GDPR).</p>
+    <p class="mt-2"><strong class="text-stone-100">Statistika návštěvnosti (Vercel Web Analytics):</strong> abychom věděli,
+      kolik lidí web navštěvuje a které stránky čtou, používáme anonymní měření od Vercelu. Nepoužívá cookies ani nic
+      neukládá do vašeho zařízení a neumí vás rozpoznat při další návštěvě. Vidíme jen souhrnná čísla (počet návštěv,
+      stránky, odkud lidé přišli, typ zařízení a zemi). Právním důvodem je náš oprávněný zájem na zlepšování webu
+      (čl. 6 odst. 1 písm. f) GDPR).</p>
     <p class="mt-2">Písmo webu máme uložené u sebe. Mapu Google načteme až ve chvíli, kdy na ni kliknete.</p>
 
     <h2 id="cookies">5. Cookies</h2>
@@ -170,6 +175,8 @@
   <footer class="border-t border-stone-900 bg-stone-950 py-6 text-center text-[11px] text-stone-500">
     &copy; 2026 Hospoda U Šuláků · <a href="./" class="underline hover:text-amber-400">Zpět na hlavní stránku</a>
   </footer>
+<!-- Vercel Web Analytics: anonymní měření návštěvnosti bez cookies -->
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 
 </html>
